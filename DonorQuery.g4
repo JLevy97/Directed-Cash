@@ -8,7 +8,7 @@ date: Number'-'Number'-'Number;
 rating: 'RATE' Name 'AS' Number'/'Number;
 find: 'FIND' Category;
 donate: 'DONATE' Currency Number HowOften date 'TO' date 'DECIDE FCFS'; //decide FCFS?????????????????
-where: 'WHERE' condition ('AND' condition)*;
+where: 'WHERE' condition ('AND' condition)*;                            //add or????
 condition: Category Op (Type | Number | Name);
 report: 'REPORT' HowOften;
 Name: ('a'..'z')+;                                          // | 'A'..'Z')+;           find way to make capital without obscuring types & cannot currently have spaces
