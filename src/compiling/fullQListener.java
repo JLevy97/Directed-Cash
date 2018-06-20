@@ -1,4 +1,4 @@
-// Generated from E:/Directed Cash\fullQ.g4 by ANTLR 4.7
+package compiling;// Generated from E:/Directed Cash\fullQ.g4 by ANTLR 4.7
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

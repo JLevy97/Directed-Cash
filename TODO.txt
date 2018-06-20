@@ -1,3 +1,14 @@
 1)grammar fixes (fragments and ordering, ATNLR syntax, Projects in own category)  ?? base language implemented
 2)Query creators  ?? prototyped to simple
 3)organization
+
+
+organization:: order of operations
+
+Query
+leader process
+Parse Query
+transaction
+    switch token to bank if needed
+create and insert block
+repeat
