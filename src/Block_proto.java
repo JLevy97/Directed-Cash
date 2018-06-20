@@ -1,13 +1,21 @@
+import java.io.Serializable;
+
 /**
  * Created by User on 6/18/2018.
  */
-public class Block_proto {
+public class Block_proto implements Serializable{
+
 
     Token_Proto token;
-    Boolean transactionProcessed;
-    Types blockType;
+    Transaction_proto transaction;
+    AccountTypes blockType;
     Account_proto acc;
-    //find way to list integrity constraints?
 
+    public Block_proto(Account_proto acc, Token_Proto token, Transaction_proto transaction, AccountTypes blockType) {
+        this.acc = acc;
+        this.token = token;
+        this.transaction = transaction;
+        this.blockType = blockType;
+    }
 
 }
