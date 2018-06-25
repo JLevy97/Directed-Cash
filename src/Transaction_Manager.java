@@ -1,9 +1,16 @@
+import org.antlr.runtime.tree.ParseTree;
+
 /**
  * Created by User on 6/20/2018.
  */
 public class Transaction_Manager {
 
     //variables for connections to chain
+
+    public Transaction_proto CreateTransactionFromParse(ParseTree t){
+
+        return new Transaction_proto(t);
+    }
 
     //completes this transaction
     public void transactionCompletion(Transaction_proto t){

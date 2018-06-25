@@ -1,3 +1,5 @@
+import org.antlr.runtime.tree.ParseTree;
+
 import java.util.List;
 
 /**
@@ -13,6 +15,8 @@ public class Transaction_proto {
     Account_proto ReceiverAccount;  //
 
     //gen constructors here
+    public Transaction_proto(ParseTree T){
 
+    }
 
 }
