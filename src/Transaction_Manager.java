@@ -6,29 +6,108 @@ import org.antlr.runtime.tree.ParseTree;
 public class Transaction_Manager {
 
     //variables for connections to chain
+    Ledger_proto ledger;
+
+    public Transaction_Manager(Ledger_proto l){
+        ledger = l;
+    }
+
+    public void updateLedger(Ledger_proto l){
+        ledger = l;
+    }
 
     public Transaction_proto CreateTransactionFromParse(ParseTree t){
 
         return new Transaction_proto(t);
     }
 
+    //executes the transaction lifespan
+    public void runTransaction(Transaction_proto t){
+
+        transactionEntering(t);
+        transactionCompletion(t);
+
+    }
+
+
+    //enters transaction into the ledger
+    public void transactionEntering(Transaction_proto t){
+        if (t.type == TransactionTypes.DONTATE){
+            ledger.freeDonations.add(t.transBlock);
+            ledger.chain.add(t);
+        }else if (t.type == TransactionTypes.FIND){
+            ledger.chain.add(t);
+        }else if (t.type == TransactionTypes.RATING){
+            ledger.chain.add(t);
+        }else if (t.type == TransactionTypes.EXPENSE){
+            ledger.freeDonations.add(t.transBlock);
+            ledger.chain.add(t);
+        }else if (t.type == TransactionTypes.CALL){
+            ledger.chain.add(t);
+        }else if (t.type == TransactionTypes.DEFINE){
+            ledger.chain.add(t);
+        }else if (t.type == TransactionTypes.BID){
+            ledger.freeDonations.add(t.transBlock);
+            ledger.chain.add(t);
+        }else{
+            System.out.println("unsupported action");
+        }
+    }
+
     //completes this transaction
     public void transactionCompletion(Transaction_proto t){
         boolean complete = false;
+        Transaction_proto bubbleUp = null;
+
         if (t.type == TransactionTypes.DONTATE){
-            if(t.matched) complete=performDonate();
+            if(t.matched) bubbleUp=performDonate();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else if (t.type == TransactionTypes.FIND){
-            complete = performFind();
+            bubbleUp = performFind();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else if (t.type == TransactionTypes.RATING){
-            complete = performRating();
+            bubbleUp = performRating();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else if (t.type == TransactionTypes.EXPENSE){
-            if(t.matched) complete=performExpense();
+            if(t.matched) bubbleUp=performExpense();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else if (t.type == TransactionTypes.CALL){
-            if(t.matched) complete=performCall();
+            bubbleUp=performCall();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else if (t.type == TransactionTypes.DEFINE){
-            complete=performDifine();
+            bubbleUp=performDifine();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else if (t.type == TransactionTypes.BID){
-            if(t.matched) complete=performBid();
+            if(t.matched) bubbleUp=performBid();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else{
             complete = false;
         }
@@ -42,39 +121,39 @@ public class Transaction_Manager {
 
     ///////////////////////////////////////////////////////////////////performs each type of transaction
 
-    public boolean performDonate(){
+    public Transaction_proto performDonate(){
 
-        return false;
+        return null;
     }
 
-    public boolean performFind(){
+    public Transaction_proto performFind(){
 
-        return false;
+        return null;
     }
 
-    public boolean performRating(){
+    public Transaction_proto performRating(){
 
-        return false;
+        return null;
     }
 
-    public boolean performExpense(){
+    public Transaction_proto performExpense(){
 
-        return false;
+        return null;
     }
 
-    public boolean performCall(){
+    public Transaction_proto performCall(){
 
-        return false;
+        return null;
     }
 
-    public boolean performDifine(){
+    public Transaction_proto performDifine(){
 
-        return false;
+        return null;
     }
 
-    public boolean performBid(){
+    public Transaction_proto performBid(){
 
-        return false;
+        return null;
     }
 
 

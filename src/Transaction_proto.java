@@ -12,7 +12,7 @@ public class Transaction_proto {
     List<Conditions> integrityConstraints;
     Account_proto callerAccount;
     boolean matched;                //matches transaction if the transaction is not a direct query
-    Account_proto ReceiverAccount;  //
+    Transaction_Block_proto transBlock;
 
     //gen constructors here
     public Transaction_proto(ParseTree T){

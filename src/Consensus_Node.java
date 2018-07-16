@@ -7,8 +7,15 @@ import java.util.List;
  */
 public class Consensus_Node { //possible leader nodes that interact with the ledger
 
+    static int Serial;
+
+    boolean isLeader;
+    Consensus_Node[] delegate_nodes;
+    //find way to measure heartbeat??? or lifeline
+
     Ledger_proto blockchain;
     List<ParseTree> queryList;
+
     //other network and conscensus need variables
 
     public void run(){

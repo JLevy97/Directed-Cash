@@ -7,29 +7,27 @@ import java.util.Map;
  */
 public class Ledger_proto {
 
-    //using a freelist and Malloc idea for the organization of the ledger
+    /*using a segmented freelist theory from Malloc where each segment is a type of block to match.
+    idea to ease and quicken the matching for specific types of blocks.
+    the freelists hold the blocks that can still be matched(free blocks) and the Maps contain the pairs/matches for transactions(allocated blocks)
+    The actual chain is kept as a log for all the transactions completed.
+     */
 
-    List<Block_proto> chain;
-    List<Account_proto> possibleUsers;
-    Map<Block_proto,List<Block_proto>> donationMactches;
-    Map<Block_proto,Block_proto> BidMactches;
-    Map<Block_proto,Block_proto> ExpenseMactches;
+    List<Transaction_proto> chain;    //list of transactions done
+    List<Account_proto> possibleUsers;  //list of transactions
 
-    public Ledger_proto(List<Block_proto> chain) {
-        this.chain = chain;
-    }
+    List<Transaction_Block_proto> freeDonations;
+    List<Transaction_Block_proto> freeProjects;
+    List<Transaction_Block_proto> freeCalls;
+    List<Transaction_Block_proto> freeBids;
+    List<Transaction_Block_proto> freeExpenses;
 
-    public Ledger_proto(){
-        chain = new ArrayList<>();
-    }
+    Map<Transaction_Block_proto,List<Transaction_Block_proto>> donationMactches;   //project block matches to multiple donors
+    Map<Transaction_Block_proto,List<Transaction_Block_proto>> BidMactches;        //call matches to multiple bids
+    Map<Transaction_Block_proto, Transaction_Block_proto> ExpenseMactches;          //bid matches to one chosen expense
 
-    public void AddUser(Account_proto account){
-        possibleUsers.add(account);
-    }
 
-    public void AddToBlockChain(Block_proto block){
-        chain.add(block);
-    }
+    //constructor
 
     //other elements to blocks??
 
