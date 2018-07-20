@@ -22,7 +22,7 @@ public class Ledger_proto {
     List<Transaction_Block_proto> freeBids;
     List<Transaction_Block_proto> freeExpenses;
 
-    Map<Transaction_Block_proto,List<Transaction_Block_proto>> donationMactches;   //project block matches to multiple donors
+    Map<Transaction_Block_proto,List<Transaction_Block_proto>> DonationMactches;   //project block matches to multiple donors
     Map<Transaction_Block_proto,List<Transaction_Block_proto>> BidMactches;        //call matches to multiple bids
     Map<Transaction_Block_proto, Transaction_Block_proto> ExpenseMactches;          //bid matches to one chosen expense
 

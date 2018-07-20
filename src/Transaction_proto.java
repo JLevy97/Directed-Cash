@@ -9,14 +9,19 @@ public class Transaction_proto {
 
     TransactionTypes type;
     Boolean statusComplete;
-    List<Conditions> integrityConstraints;
     Account_proto callerAccount;
-    boolean matched;                //matches transaction if the transaction is not a direct query
     Transaction_Block_proto transBlock;
+    Consensus_Node transCreator;
+
+    public Transaction_proto(){
+
+    }
 
     //gen constructors here
     public Transaction_proto(ParseTree T){
 
+
+        //upon creation of a donation/call/project/bid/expense --> create the appropriate freelist blocks
     }
 
 }

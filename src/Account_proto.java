@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by User on 6/18/2018.
@@ -8,6 +9,7 @@ public class Account_proto implements Serializable {
     String username;
     String password;
     AccountTypes accountType;
+    List<Token_Proto> tokens;
 
     public Account_proto() {
         username = null;

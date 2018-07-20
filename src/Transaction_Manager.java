@@ -7,6 +7,7 @@ public class Transaction_Manager {
 
     //variables for connections to chain
     Ledger_proto ledger;
+    Consensus_Node parent_Node;
 
     public Transaction_Manager(Ledger_proto l){
         ledger = l;
@@ -56,11 +57,12 @@ public class Transaction_Manager {
 
     //completes this transaction
     public void transactionCompletion(Transaction_proto t){
+        Transaction_Block_proto tBlock = t.transBlock;
         boolean complete = false;
         Transaction_proto bubbleUp = null;
 
         if (t.type == TransactionTypes.DONTATE){
-            if(t.matched) bubbleUp=performDonate();
+            if(tBlock.matched) bubbleUp=performDonate();
             if (bubbleUp!=null){
                 transactionCompletion(bubbleUp);
             }else {
@@ -81,7 +83,7 @@ public class Transaction_Manager {
                 complete = true;
             }
         }else if (t.type == TransactionTypes.EXPENSE){
-            if(t.matched) bubbleUp=performExpense();
+            if(tBlock.matched) bubbleUp=performExpense();
             if (bubbleUp!=null){
                 transactionCompletion(bubbleUp);
             }else {
@@ -102,7 +104,7 @@ public class Transaction_Manager {
                 complete = true;
             }
         }else if (t.type == TransactionTypes.BID){
-            if(t.matched) bubbleUp=performBid();
+            if(tBlock.matched) bubbleUp=performBid();
             if (bubbleUp!=null){
                 transactionCompletion(bubbleUp);
             }else {
