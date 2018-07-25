@@ -6,6 +6,7 @@ import java.util.List;
 public class Consensus_Cluster {
 
     List<Consensus_Node> cluster;
+    List<Account_proto> account_protos;
     Consensus_Node leader;
     Consensus_Node[] delegates;
 
