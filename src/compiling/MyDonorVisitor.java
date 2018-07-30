@@ -1,3 +1,8 @@
+package compiling;
+
+import compiling.DonorQueryBaseVisitor;
+import compiling.DonorQueryParser;
+
 public class MyDonorVisitor extends DonorQueryBaseVisitor<Object> {
 
     @Override public Object visitNewq(DonorQueryParser.NewqContext ctx) { return visitChildren(ctx); }
