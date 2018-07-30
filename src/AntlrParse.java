@@ -1,6 +1,7 @@
 import compiling.DonorQueryLexer;
 import compiling.fullQParser;
 import org.antlr.v4.runtime.CharStreams;
+import org.antlr.v4.runtime.CodePointCharStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -9,7 +10,7 @@ public class AntlrParse {
 
     public static void main(String[] args){
 
-        for (int i=0;i<20;i++) {
+        for (int i=0;i<1;i++) {
             int rand = (int)(Math.random()*3)+1;
             String q = CreateQ(rand);
             System.out.println(q);
@@ -17,14 +18,14 @@ public class AntlrParse {
                 //parse with donor query lang
                 try {
 
-
                     //source of string to parse
-                    String source = "test.txt";
-                    CharStream cs = CharStreams.fromFileName(source);
+                    //String source = "test.txt";
+                    CharStream cs = CharStreams.fromString(q);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
                     DonorQueryLexer lexer = new DonorQueryLexer(cs);
                     CommonTokenStream tk = new CommonTokenStream(lexer);
                     fullQParser p = new fullQParser(tk);
                     ParseTree tree = p.newq();
+                    System.out.println(tree);
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -36,9 +37,24 @@ public class AntlrParse {
             }
         }
 
+    }
 
+    public static ParseTree parse(String query){
+        ParseTree tree = null;
+        try {
+            //source of string to parse
+            //String source = "test.txt";
+            CharStream cs = CharStreams.fromString(query);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
+            DonorQueryLexer lexer = new DonorQueryLexer(cs);
+            CommonTokenStream tk = new CommonTokenStream(lexer);
+            fullQParser p = new fullQParser(tk);
+            tree = p.newq();
+            System.out.println(tree);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-
+        return tree;
     }
 
 

@@ -19,7 +19,7 @@ public class Account_proto implements Serializable {
 
     public Account_proto(String username, String password, AccountTypes accountType) {
         this.username = username;
-        password = password;
+        this.password = password;
         this.accountType = accountType;
     }
 

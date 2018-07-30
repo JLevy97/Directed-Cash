@@ -1,4 +1,4 @@
-import org.antlr.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +27,8 @@ public class Consensus_Node { //possible leader nodes that interact with the led
         //accept connections
 
         //run transaction manager to deal with gathered queries
+        String Query = "gathered from networking";
+        queryList.add(AntlrParse.parse(Query));
 
         //run matching on ledger periodically
 

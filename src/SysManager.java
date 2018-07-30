@@ -3,20 +3,25 @@ import java.util.List;
 /**
  * Created by User on 7/23/2018.
  */
-public class SysManager {
+public class SysManager extends Account_proto{
 
-    Consensus_Cluster cluster;
-    List<Account_proto> accounts;
+    Consensus_Cluster parent;
+
+    public SysManager(){
+        super("SysMan", "pass", AccountTypes.SYSMAN);
+    }
 
     public void addNode(){
 
+        //authorization checks;
+        parent.addToClusterQueue.add(new Consensus_Node());
     }
 
     public void addAccount(){
 
         //grab
         Account_proto create = new Account_proto();
-        accounts.add(create);
-        cluster.account_protos = accounts;
+        parent.account_protos.add(create);
     }
+
 }
