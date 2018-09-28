@@ -1,55 +1,65 @@
-import compiling.DonorQueryLexer;
-import compiling.fullQParser;
+import org.antlr.runtime.debug.ParseTreeBuilder;
 import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.CodePointCharStream;
+import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
+
 
 public class AntlrParse {
 
     public static void main(String[] args){
 
         for (int i=0;i<1;i++) {
-            int rand = (int)(Math.random()*3)+1;
-            String q = CreateQ(rand);
+
+            Ledger_proto l = new Ledger_proto();
+            Transaction_Manager tm = new Transaction_Manager(l);
+
+            String q = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
             System.out.println(q);
-            if (rand == 1){
-                //parse with donor query lang
-                try {
+            //parse with donor query lang
+            try {
 
-                    //source of string to parse
-                    //String source = "test.txt";
-                    CharStream cs = CharStreams.fromString(q);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
-                    DonorQueryLexer lexer = new DonorQueryLexer(cs);
-                    CommonTokenStream tk = new CommonTokenStream(lexer);
-                    fullQParser p = new fullQParser(tk);
-                    ParseTree tree = p.newq();
-                    System.out.println(tree);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+                //source of string to parse
+                //String source = "test.txt";
+                CharStream cs = CharStreams.fromString(q);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
+                fullQLexer lexer = new fullQLexer(cs);
+                CommonTokenStream tk = new CommonTokenStream(lexer);
+                ParseTreeBuilder builder = new ParseTreeBuilder("prog");
+                fullQParser p = new fullQParser(tk);
+                p.setBuildParseTree(true);
+                RuleContext tree = p.newq();
 
-            }else if (rand == 2){
-                //parse with ag query lang
-            }else{
-                //parse with vendor query lang
+               /* MyfullQVisitor visitor= new MyfullQVisitor();
+                Object Vreturn = visitor.visit(tree);
+                System.out.println(Vreturn);*/
+
+                System.out.println("tree" + tree.toStringTree(p));   //
+
+                Transaction_proto test = new Transaction_proto(tree, p);
+                //System.out.println(test);
+
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
 
     }
 
-    public static ParseTree parse(String query){
-        ParseTree tree = null;
+    public static RuleContext parse(String query){
+        RuleContext tree = null;
         try {
             //source of string to parse
             //String source = "test.txt";
             CharStream cs = CharStreams.fromString(query);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
-            DonorQueryLexer lexer = new DonorQueryLexer(cs);
+            fullQLexer lexer = new fullQLexer(cs);
             CommonTokenStream tk = new CommonTokenStream(lexer);
+            ParseTreeBuilder builder = new ParseTreeBuilder("prog");
             fullQParser p = new fullQParser(tk);
+            p.setBuildParseTree(true);
             tree = p.newq();
-            System.out.println(tree);
+            System.out.println("tree" + tree.toStringTree(p));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -57,45 +67,5 @@ public class AntlrParse {
         return tree;
     }
 
-
-    /**
-     *
-     * @return randomly determines a set of pre-defined queries with the ANTLR grammars
-     */
-    public static String CreateQ(int rand){
-        String q = "";
-        if (rand == 1){
-            q = createDonorQ();
-        }else if (rand == 2){
-            q = createAggregatorQ();
-        }else{
-            q = createVendorQ();
-        }
-        return q;
-    }
-
-    public static String createDonorQ(){
-
-        String DQ = "FROM anon ID=8 TIMESTAMP 2018-02-12T20:53:00 DONATE $100 MONTHLY 3-10-17 TO 3-10-18 DECIDE FCFS WHERE SCHEMA=1 AND CATEGORY=FOOD REPORT ONCE";
-        //int type = (int)(Math.random()*3)+1;
-
-
-        return DQ;
-    }
-
-    public static String createAggregatorQ(){
-
-        String AQ = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
-       //int type = (int)(Math.random()*3)+1;
-
-        return AQ;
-    }
-
-    public static String createVendorQ(){
-
-        String VQ = "FROM freshhousegrocery ID=3 BID $550 TO brightraycharity WHERE SCHEMA=1 AND PROJECT= fooddrive 2018 AND CATEGORY=FOOD URL http";
-
-        return VQ;
-    }
 
 }

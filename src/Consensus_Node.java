@@ -1,3 +1,4 @@
+import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class Consensus_Node { //possible leader nodes that interact with the led
     //find way to measure heartbeat??? or lifeline
 
     Ledger_proto blockchain;
-    List<ParseTree> queryList;
+    List<RuleContext> queryList;
 
     Transaction_Manager tm;
     List<Transaction_proto> transactions = new ArrayList<>();
@@ -27,8 +28,15 @@ public class Consensus_Node { //possible leader nodes that interact with the led
         //accept connections
 
         //run transaction manager to deal with gathered queries
-        String Query = "gathered from networking";
-        queryList.add(AntlrParse.parse(Query));
+
+        //Query = connection.getQuery();
+        String Query = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
+        RuleContext q = AntlrParse.parse(Query);
+        queryList.add(q);
+
+       // Transaction_proto trans = tm.CreateTransactionFromParse(q);
+        //transactions.add(trans);
+        //tm.runTransaction(trans);
 
         //run matching on ledger periodically
 

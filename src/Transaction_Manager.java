@@ -1,4 +1,5 @@
 import org.antlr.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.RuleContext;
 
 /**
  * Created by User on 6/20/2018.
@@ -17,9 +18,9 @@ public class Transaction_Manager {
         ledger = l;
     }
 
-    public Transaction_proto CreateTransactionFromParse(ParseTree t){
+    public Transaction_proto CreateTransactionFromParse(RuleContext t, fullQParser parser){
 
-        return new Transaction_proto(t);
+        return new Transaction_proto(t, parser);
     }
 
     //executes the transaction lifespan

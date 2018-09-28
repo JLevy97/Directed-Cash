@@ -1,4 +1,5 @@
 import org.antlr.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.RuleContext;
 
 import java.util.List;
 
@@ -18,10 +19,18 @@ public class Transaction_proto {
     }
 
     //gen constructors here
-    public Transaction_proto(ParseTree T){
-
-
+    public Transaction_proto(RuleContext T, fullQParser parser){
         //upon creation of a donation/call/project/bid/expense --> create the appropriate freelist blocks
+        System.out.println(T.toString(parser));
+        RuleContext child = (RuleContext)T.getChild(0).getPayload();
+        //TreeRecursion(child,parser);
+        //System.out.println(child.toString(parser));
+
+
+    }
+
+    private void TreeRecursion(RuleContext T, fullQParser parser){
+        //System.out.println(T.toString(parser));
     }
 
 }
