@@ -7,6 +7,11 @@ import java.util.Map;
  */
 public class Ledger_proto {
 
+    //workflow abstraction?????
+        //black box sequence & roles
+        //workflow specification
+
+
     /*using a segmented freelist theory from Malloc where each segment is a type of block to match.
     idea to ease and quicken the matching for specific types of blocks.
     the freelists hold the blocks that can still be matched(free blocks) and the Maps contain the pairs/matches for transactions(allocated blocks)
@@ -14,7 +19,7 @@ public class Ledger_proto {
      */
 
     List<Transaction_proto> chain;    //list of transactions done
-    List<Account_proto> possibleUsers;  //list of transactions              ??maybe accounts are kept by the cluster
+    List<Account_proto> possibleUsers;  //list of transactions              ??maybe accounts are kept by the cluster ---> maybe put into bank
 
     List<Transaction_Block_proto> freeDonations;
     List<Transaction_Block_proto> freeProjects;

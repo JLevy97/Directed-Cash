@@ -20,7 +20,8 @@ public class Transaction_Manager {
 
     public Transaction_proto CreateTransactionFromParse(RuleContext t, fullQParser parser){
 
-        return new Transaction_proto(t, parser);
+        Account_proto test = new Account_proto();
+        return new Transaction_proto(t, parser, test);
     }
 
     //executes the transaction lifespan
