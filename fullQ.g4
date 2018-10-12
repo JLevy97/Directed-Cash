@@ -1,8 +1,12 @@
 grammar fullQ;
-newq: donor | aggregator | vendor;
+newq: donor | aggregator | vendor | search;
 donor: from timestamp? (donate|find|rating) where? report?;
 aggregator: from (expense|call|define) where? url?;
 vendor: from bid where? url?;
+search: locate where?;
+
+//Search Rules
+locate: 'LOCATE' Category Name;
 
 //donor
 from: 'FROM' Name 'ID=' Number;

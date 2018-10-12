@@ -14,7 +14,6 @@ public class Transaction_proto {
     Boolean statusComplete;
     Account_proto callerAccount;
     Transaction_Block_proto transBlock;
-    ArrayList<Condition> conditions;
     String QueryString;
     //Consensus_Node transCreator;
 
@@ -23,23 +22,34 @@ public class Transaction_proto {
 
         statusComplete = false;
         callerAccount = caller;
-        conditions = new ArrayList<Condition>();
 
         if (T.toStringTree(parser).contains("DONATE")){
             type = TransactionTypes.DONTATE;
+            transBlock = new Donate_Block();                //constructor needed
         }else if(T.toStringTree(parser).contains("FIND")){
             type = TransactionTypes.FIND;
+            transBlock = new Find_Block();
         }else if(T.toStringTree(parser).contains("RATING")){
             type = TransactionTypes.RATING;
+            transBlock = new Rating_Block();
         }else if(T.toStringTree(parser).contains("EXPENSE")){
             type = TransactionTypes.EXPENSE;
+            transBlock = new Expense_Block();
         }else if(T.toStringTree(parser).contains("CALL")){
             type = TransactionTypes.CALL;
+            transBlock = new Call_Block();
         }else if(T.toStringTree(parser).contains("DEFINE")){
             type = TransactionTypes.DEFINE;
-        }else{
+            transBlock = new Define_Block();
+        }else if (T.toStringTree(parser).contains("BID")){
             type = TransactionTypes.BID;
+            transBlock = new Bid_Block();
+        }else{
+            type = TransactionTypes.LOCATE;
+            transBlock = new Locate_Block();
         }
+
+        QueryString = T.toStringTree(parser);
 
         //upon creation of a donation/call/project/bid/expense --> create the appropriate freelist blocks
         System.out.println(T.toString(parser));
@@ -51,6 +61,9 @@ public class Transaction_proto {
         System.out.println(child.toString(parser));
     }
 
+
+
+
     private void TreeRecursion(RuleContext T, fullQParser parser){
         //System.out.println(T.toString(parser));
     }
@@ -59,4 +72,13 @@ public class Transaction_proto {
         statusComplete = complete;
     }
 
+    @Override
+    public String toString(){
+        String s="";
+        s+="\ntype: "+type;
+        s+="\nstatus: "+statusComplete;
+        s+="\ncaller: "+callerAccount;
+
+        return s;
+    }
 }

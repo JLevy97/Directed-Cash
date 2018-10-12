@@ -47,6 +47,26 @@ public interface fullQListener extends ParseTreeListener {
 	 */
 	void exitVendor(fullQParser.VendorContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link fullQParser#search}.
+	 * @param ctx the parse tree
+	 */
+	void enterSearch(fullQParser.SearchContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link fullQParser#search}.
+	 * @param ctx the parse tree
+	 */
+	void exitSearch(fullQParser.SearchContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link fullQParser#locate}.
+	 * @param ctx the parse tree
+	 */
+	void enterLocate(fullQParser.LocateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link fullQParser#locate}.
+	 * @param ctx the parse tree
+	 */
+	void exitLocate(fullQParser.LocateContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link fullQParser#from}.
 	 * @param ctx the parse tree
 	 */

@@ -43,7 +43,7 @@ public class AntlrParse {
                 System.out.println("tree" + tree.toStringTree(p));   //
 
                 Transaction_proto test = new Transaction_proto(tree, p, testAcc);
-                //System.out.println(test);
+                System.out.println(test);
 
             } catch (Exception e) {
                 e.printStackTrace();

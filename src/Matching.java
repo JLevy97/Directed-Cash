@@ -49,9 +49,9 @@ public class Matching {
                 }
                 //create matching block
                 Transaction_Block_proto match = new Match_Block_proto();
-                Transaction_proto m = new Transaction_proto();
+               /* Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
-                ledger.chain.add(m);
+                ledger.chain.add(m);*/
             }
 
         }else if(toMatch.type == TransactionTypes.EXPENSE){
@@ -84,9 +84,9 @@ public class Matching {
                 }
                 //create matching block
                 Transaction_Block_proto match = new Match_Block_proto();
-                Transaction_proto m = new Transaction_proto();
-                m.transBlock = match;
-                ledger.chain.add(m);
+                //Transaction_proto m = new Transaction_proto();
+                //m.transBlock = match;
+                //ledger.chain.add(m);
             }
 
         }else if(toMatch.type == TransactionTypes.BID){
@@ -121,9 +121,9 @@ public class Matching {
                 }
                 //create matching block
                 Transaction_Block_proto match = new Match_Block_proto();
-                Transaction_proto m = new Transaction_proto();
+             /*   Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
-                ledger.chain.add(m);
+                ledger.chain.add(m);  */
             }
 
         }else if (toMatch.type == TransactionTypes.CALL){

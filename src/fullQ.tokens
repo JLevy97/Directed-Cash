@@ -21,34 +21,36 @@ T__19=20
 T__20=21
 T__21=22
 T__22=23
-Name=24
-Number=25
-Currency=26
-Op=27
-Category=28
-Type=29
-HowOften=30
-WS=31
-'FROM'=1
-'ID='=2
-'TIMESTAMP'=3
-'T'=4
-':'=5
-'-'=6
-'RATE'=7
-'AS'=8
-'/'=9
-'FIND'=10
-'DONATE'=11
-'TO'=12
-'DECIDE FCFS'=13
-'WHERE'=14
-'AND'=15
-'REPORT'=16
-'EXPENSE='=17
-'TO VENDOR'=18
-'VENDOR RFP'=19
-'DEFINE'=20
-'GOAL'=21
-'URL='=22
-'BID'=23
+T__23=24
+Name=25
+Number=26
+Currency=27
+Op=28
+Category=29
+Type=30
+HowOften=31
+WS=32
+'LOCATE'=1
+'FROM'=2
+'ID='=3
+'TIMESTAMP'=4
+'T'=5
+':'=6
+'-'=7
+'RATE'=8
+'AS'=9
+'/'=10
+'FIND'=11
+'DONATE'=12
+'TO'=13
+'DECIDE FCFS'=14
+'WHERE'=15
+'AND'=16
+'REPORT'=17
+'EXPENSE='=18
+'TO VENDOR'=19
+'VENDOR RFP'=20
+'DEFINE'=21
+'GOAL'=22
+'URL='=23
+'BID'=24

@@ -34,6 +34,18 @@ public interface fullQVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitVendor(fullQParser.VendorContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link fullQParser#search}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSearch(fullQParser.SearchContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link fullQParser#locate}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLocate(fullQParser.LocateContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link fullQParser#from}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
