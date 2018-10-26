@@ -20,7 +20,7 @@ public class AntlrParse {
             String q = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
             System.out.println(q);
 
-            //memory and file, mal-imput recorded as error
+            //memory and file, mal-input recorded as error
             //search capability
 
             //parse with donor query lang

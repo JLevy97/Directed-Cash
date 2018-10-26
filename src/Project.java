@@ -10,7 +10,7 @@ public class Project {  //a goal to donate towards
     Double currentFunds;
     boolean filled;
     Account_proto owner;
-    List<Call_Block_proto> calls;
+    List<Call_Block> calls;
 
     public void addFunds(double add){
         currentFunds+=add;

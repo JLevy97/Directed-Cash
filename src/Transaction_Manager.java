@@ -27,9 +27,25 @@ public class Transaction_Manager {
     //executes the transaction lifespan
     public void runTransaction(Transaction_proto t){
 
+        //enter transaction into the log
         transactionEntering(t);
-        transactionCompletion(t);
 
+        //execute transactions that do not require a Match to proceed
+        if (t.type == TransactionTypes.FIND){
+            transactionCompletion(t);
+            return;
+        }else if (t.type == TransactionTypes.DEFINE){
+            transactionCompletion(t);
+            return;
+        }else if (t.type == TransactionTypes.RATING ){
+            transactionCompletion(t);
+            return;
+        }else if (t.type == TransactionTypes.LOCATE ){
+            transactionCompletion(t);
+            return;
+        }
+
+        Matching.SweepMatch(t.transBlock,ledger);
     }
 
 
@@ -52,7 +68,9 @@ public class Transaction_Manager {
         }else if (t.type == TransactionTypes.BID){
             ledger.freeDonations.add(t.transBlock);
             ledger.chain.add(t);
-        }else{
+        }else if(t.type == TransactionTypes.LOCATE){
+            ledger.chain.add(t);
+        } else{
             System.out.println("unsupported action");
         }
     }
@@ -112,6 +130,13 @@ public class Transaction_Manager {
             }else {
                 complete = true;
             }
+        }else if (t.type == TransactionTypes.LOCATE){
+            bubbleUp = performLocate();
+            if (bubbleUp!=null){
+                transactionCompletion(bubbleUp);
+            }else {
+                complete = true;
+            }
         }else{
             complete = false;
         }
@@ -160,5 +185,8 @@ public class Transaction_Manager {
         return null;
     }
 
+    public Transaction_proto performLocate(){
 
+        return null;
+    }
 }

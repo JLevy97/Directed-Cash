@@ -9,4 +9,10 @@ public class Donate_Block extends Transaction_Block_proto {
     String start;
     String end;
 
+    public Donate_Block(String Qtree){
+
+
+
+    }
+
 }

@@ -25,28 +25,28 @@ public class Transaction_proto {
 
         if (T.toStringTree(parser).contains("DONATE")){
             type = TransactionTypes.DONTATE;
-            transBlock = new Donate_Block();                //constructor needed
+            transBlock = new Donate_Block(T.toStringTree(parser));  //constructor needed
         }else if(T.toStringTree(parser).contains("FIND")){
             type = TransactionTypes.FIND;
-            transBlock = new Find_Block();
+            transBlock = new Find_Block();                          //constructor needed
         }else if(T.toStringTree(parser).contains("RATING")){
             type = TransactionTypes.RATING;
-            transBlock = new Rating_Block();
+            transBlock = new Rating_Block();                        //constructor needed
         }else if(T.toStringTree(parser).contains("EXPENSE")){
             type = TransactionTypes.EXPENSE;
-            transBlock = new Expense_Block();
+            transBlock = new Expense_Block();                       //constructor needed
         }else if(T.toStringTree(parser).contains("CALL")){
             type = TransactionTypes.CALL;
-            transBlock = new Call_Block();
+            transBlock = new Call_Block();                          //constructor needed
         }else if(T.toStringTree(parser).contains("DEFINE")){
             type = TransactionTypes.DEFINE;
-            transBlock = new Define_Block();
+            transBlock = new Define_Block();                        //constructor needed
         }else if (T.toStringTree(parser).contains("BID")){
             type = TransactionTypes.BID;
-            transBlock = new Bid_Block();
+            transBlock = new Bid_Block();                           //constructor needed
         }else{
             type = TransactionTypes.LOCATE;
-            transBlock = new Locate_Block();
+            transBlock = new Locate_Block();                       //constructor needed
         }
 
         QueryString = T.toStringTree(parser);
@@ -60,8 +60,6 @@ public class Transaction_proto {
         child = (RuleContext)child.getChild(0).getPayload();
         System.out.println(child.toString(parser));
     }
-
-
 
 
     private void TreeRecursion(RuleContext T, fullQParser parser){

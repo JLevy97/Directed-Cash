@@ -48,7 +48,7 @@ public class Matching {
                     ledger.DonationMactches.put(possibleProj,toAdd);
                 }
                 //create matching block
-                Transaction_Block_proto match = new Match_Block_proto();
+                Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleProj);
                /* Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);*/
@@ -61,7 +61,7 @@ public class Matching {
 
             //sweep through projects for a fit for that donation
             for(Transaction_Block_proto bid: ledger.freeBids){
-                Bid_Block_proto b = (Bid_Block_proto)bid;
+                Bid_Block b = (Bid_Block)bid;
                 //check to make sure the constraints are valid
 
                 //check if donation goal is already achieved
@@ -83,7 +83,7 @@ public class Matching {
                     ledger.DonationMactches.put(possibleBid,toAdd);
                 }
                 //create matching block
-                Transaction_Block_proto match = new Match_Block_proto();
+                Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleBid);
                 //Transaction_proto m = new Transaction_proto();
                 //m.transBlock = match;
                 //ledger.chain.add(m);
@@ -95,7 +95,7 @@ public class Matching {
 
             //sweep through projects for a fit for that donation
             for(Transaction_Block_proto call: ledger.freeCalls){
-                Call_Block_proto c = (Call_Block_proto)call;
+                Call_Block c = (Call_Block)call;
                 //check to make sure the constraints are valid
 
                 //check if donation goal is already achieved
@@ -120,7 +120,7 @@ public class Matching {
                     ledger.DonationMactches.put(possibleCall,toAdd);
                 }
                 //create matching block
-                Transaction_Block_proto match = new Match_Block_proto();
+                Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleCall);
              /*   Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);  */
