@@ -7,4 +7,13 @@ public class Define_Block extends Transaction_Block_proto {
     String name;
     String currency;
     double goal;
+    Project_Block_proto project;
+
+    public Define_Block(){
+
+    }
+
+    public Define_Block(String Qtree){
+
+    }
 }

@@ -9,9 +9,11 @@ public class Transaction_Manager {
     //variables for connections to chain
     Ledger_proto ledger;
     Consensus_Node parent_Node;
+    PseudoBank bank;
 
     public Transaction_Manager(Ledger_proto l){
         ledger = l;
+        bank = new PseudoBank();
     }
 
     public void updateLedger(Ledger_proto l){
@@ -79,64 +81,23 @@ public class Transaction_Manager {
     public void transactionCompletion(Transaction_proto t){
         Transaction_Block_proto tBlock = t.transBlock;
         boolean complete = false;
-        Transaction_proto bubbleUp = null;
 
         if (t.type == TransactionTypes.DONTATE){
-            if(tBlock.matched) bubbleUp=performDonate();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.FIND){
-            bubbleUp = performFind();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.RATING){
-            bubbleUp = performRating();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.EXPENSE){
-            if(tBlock.matched) bubbleUp=performExpense();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.CALL){
-            bubbleUp=performCall();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.DEFINE){
-            bubbleUp=performDifine();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.BID){
-            if(tBlock.matched) bubbleUp=performBid();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else if (t.type == TransactionTypes.LOCATE){
-            bubbleUp = performLocate();
-            if (bubbleUp!=null){
-                transactionCompletion(bubbleUp);
-            }else {
-                complete = true;
-            }
+
         }else{
             complete = false;
         }
@@ -150,42 +111,125 @@ public class Transaction_Manager {
 
     ///////////////////////////////////////////////////////////////////performs each type of transaction
 
-    public Transaction_proto performDonate(){
+    public Transaction_proto performDonate(Transaction_Block_proto exec){
+
+        if(exec.type == TransactionTypes.BUBBLEUP){
+
+            Match_Block_proto m = (Match_Block_proto)exec;
+            //move money from donation into project and update project stats
+            Define_Block to = (Define_Block)m.b;
+            Donate_Block from = (Donate_Block)m.a;
+            Boolean function = bank.Donate(from.amount,to.project.project);
+
+            //print that money has been moved into projct and that donation is complete
+            System.out.println("Donation: "+from);
+            System.out.println("TO: "+to);
+            System.out.println("Status: "+function);
+        }
+
+        //maybe not return a transaction
+        return null;
+    }
+
+    public Transaction_proto performFind(Transaction_Block_proto exec){
+
+        //get type of category looked for
+        Find_Block f = (Find_Block)exec;
+        //search in ledger for match
+        for(int i=0;i<ledger.chain.size();i++){
+            if(ledger.chain.get(i).name.equals(f.name)){
+                //return info as transaction(print for now)
+                System.out.println("Transaction: "+ledger.chain.get(i));
+            }
+        }
+
 
         return null;
     }
 
-    public Transaction_proto performFind(){
+    public  Transaction_proto performRating(Transaction_Block_proto exec){
+
+        //find aggregate from accuonts
+        Rating_Block r = (Rating_Block)exec;
+        boolean complete = bank.addRating(r.RateName,r.rating,r.outOf);
+        if(complete){
+            System.out.println("gave rating: "+(r.rating/r.outOf)+ " to "+ r.RateName);
+        }
 
         return null;
     }
 
-    public Transaction_proto performRating(){
+    public static Transaction_proto performExpense(Transaction_Block_proto exec){
+
+        if(exec.type == TransactionTypes.BUBBLEUP){
+
+            Match_Block_proto m = (Match_Block_proto)exec;
+            //find call
+            Bid_Block bid = (Bid_Block)m.b;
+            Expense_Block exp = (Expense_Block)m.a;
+
+            //print that money has been moved into vendor and that expense is complete
+
+        }
 
         return null;
     }
 
-    public Transaction_proto performExpense(){
+    public Transaction_proto performCall(Transaction_Block_proto exec){
+
+        //find project
+        Call_Block c = (Call_Block)exec;
+        //add call
+        for (int i = 0;i<ledger.allProjects.size();i++){
+            if (ledger.allProjects.get(i).name.equals(c.categoryName)){
+                ledger.allProjects.get(i).calls.add(c);
+                System.out.println("call added to: "+ledger.allProjects.get(i));
+            }
+        }
+        //give it a call id too
 
         return null;
     }
 
-    public Transaction_proto performCall(){
+    public Transaction_proto performDefine(Transaction_Block_proto exec){
+
+        //state the definition of the project and its block
+        Define_Block d = (Define_Block)exec;
+        System.out.println("Definition created: "+d);
 
         return null;
     }
 
-    public Transaction_proto performDifine(){
+    public static Transaction_proto performBid(Transaction_Block_proto exec){
+
+        if(exec.type == TransactionTypes.BUBBLEUP){
+
+            Match_Block_proto m = (Match_Block_proto)exec;
+            //find call
+            Call_Block call = (Call_Block)m.b;
+            Bid_Block bid = (Bid_Block)m.a;
+
+            //show information for matching call and bid
+            System.out.println("matched");
+
+        }
 
         return null;
     }
 
-    public Transaction_proto performBid(){
+    public  Transaction_proto performLocate(Transaction_Block_proto exec){
 
-        return null;
-    }
-
-    public Transaction_proto performLocate(){
+        //search through ledger chain for a match to the location target
+        //get type of category looked for
+        Locate_Block f = (Locate_Block)exec;
+        //search in ledger for match
+        for(int i=0;i<ledger.chain.size();i++){
+            if(ledger.chain.get(i).name.equals(f.name)){
+                //return info as transaction(print for now)
+                System.out.println("Transaction: "+ledger.chain.get(i));
+            }
+        }
+        //print info for that target.
 
         return null;
     }

@@ -19,6 +19,7 @@ public class Ledger_proto {
      */
 
     List<Transaction_proto> chain;    //list of transactions done
+    List<Project> allProjects;
    /// List<Account_proto> possibleUsers;  //list of transactions              ??maybe accounts are kept by the cluster ---> maybe put into bank
 
     List<Transaction_Block_proto> freeDonations;

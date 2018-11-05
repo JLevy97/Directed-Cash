@@ -15,6 +15,7 @@ public class Transaction_proto {
     Account_proto callerAccount;
     Transaction_Block_proto transBlock;
     String QueryString;
+    String name;
     //Consensus_Node transCreator;
 
     //gen constructors here

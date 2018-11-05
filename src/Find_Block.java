@@ -4,4 +4,5 @@
 public class Find_Block extends Transaction_Block_proto{
 
     String category;
+    String name;
 }

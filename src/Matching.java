@@ -48,7 +48,10 @@ public class Matching {
                     ledger.DonationMactches.put(possibleProj,toAdd);
                 }
                 //create matching block
+                toMatch.matched = true;
+                possibleProj.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleProj);
+                Transaction_Manager.performDonate(match);
                /* Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);*/
@@ -83,7 +86,10 @@ public class Matching {
                     ledger.DonationMactches.put(possibleBid,toAdd);
                 }
                 //create matching block
+                toMatch.matched = true;
+                possibleBid.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleBid);
+                Transaction_Manager.performExpense(match);
                 //Transaction_proto m = new Transaction_proto();
                 //m.transBlock = match;
                 //ledger.chain.add(m);
@@ -120,7 +126,10 @@ public class Matching {
                     ledger.DonationMactches.put(possibleCall,toAdd);
                 }
                 //create matching block
+                toMatch.matched = true;
+                possibleCall.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleCall);
+                Transaction_Manager.performBid(match);
              /*   Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);  */
