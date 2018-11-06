@@ -12,6 +12,14 @@ public class Project {  //a goal to donate towards
     Account_proto owner;
     List<Call_Block> calls;
 
+    public Project(String name, Double goal, Double currentFunds, Account_proto owner) {
+        this.name = name;
+        this.goal = goal;
+        this.currentFunds = currentFunds;
+        this.filled = false;
+        this.owner = owner;
+    }
+
     public void addFunds(double add){
         currentFunds+=add;
         if(currentFunds>goal)filled = true;

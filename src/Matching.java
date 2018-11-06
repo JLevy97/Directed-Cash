@@ -51,7 +51,7 @@ public class Matching {
                 toMatch.matched = true;
                 possibleProj.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleProj);
-                Transaction_Manager.performDonate(match);
+                //Transaction_Manager.performDonate(match);
                /* Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);*/
@@ -89,7 +89,7 @@ public class Matching {
                 toMatch.matched = true;
                 possibleBid.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleBid);
-                Transaction_Manager.performExpense(match);
+                //Transaction_Manager.performExpense(match);
                 //Transaction_proto m = new Transaction_proto();
                 //m.transBlock = match;
                 //ledger.chain.add(m);
@@ -129,7 +129,7 @@ public class Matching {
                 toMatch.matched = true;
                 possibleCall.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleCall);
-                Transaction_Manager.performBid(match);
+                //Transaction_Manager.performBid(match);
              /*   Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);  */

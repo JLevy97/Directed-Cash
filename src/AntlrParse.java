@@ -28,7 +28,7 @@ public class AntlrParse {
 
                 //source of string to parse
                 //String source = "test.txt";
-                CharStream cs = CharStreams.fromString(q);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
+                CharStream cs = CharStreams.fromString(q);
                 fullQLexer lexer = new fullQLexer(cs);
                 CommonTokenStream tk = new CommonTokenStream(lexer);
                 ParseTreeBuilder builder = new ParseTreeBuilder("prog");
@@ -36,11 +36,8 @@ public class AntlrParse {
                 p.setBuildParseTree(true);
                 RuleContext tree = p.newq();
 
-               /* MyfullQVisitor visitor= new MyfullQVisitor();
-                Object Vreturn = visitor.visit(tree);
-                System.out.println(Vreturn);*/
 
-                System.out.println("tree" + tree.toStringTree(p));   //
+                System.out.println("tree" + tree.toStringTree(p));
 
                 Transaction_proto test = new Transaction_proto(tree, p, testAcc);
                 System.out.println(test);

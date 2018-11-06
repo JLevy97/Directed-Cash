@@ -23,6 +23,7 @@ public class Transaction_proto {
 
         statusComplete = false;
         callerAccount = caller;
+        QueryString = T.toStringTree(parser);
 
         if (T.toStringTree(parser).contains("DONATE")){
             type = TransactionTypes.DONTATE;
@@ -40,8 +41,9 @@ public class Transaction_proto {
             type = TransactionTypes.CALL;
             transBlock = new Call_Block();                          //constructor needed
         }else if(T.toStringTree(parser).contains("DEFINE")){
+            System.out.println("IN HERE");
             type = TransactionTypes.DEFINE;
-            transBlock = new Define_Block();                        //constructor needed
+            transBlock = new Define_Block(QueryString,callerAccount);                        //constructor needed
         }else if (T.toStringTree(parser).contains("BID")){
             type = TransactionTypes.BID;
             transBlock = new Bid_Block();                           //constructor needed
@@ -50,16 +52,16 @@ public class Transaction_proto {
             transBlock = new Locate_Block();                       //constructor needed
         }
 
-        QueryString = T.toStringTree(parser);
+
 
         //upon creation of a donation/call/project/bid/expense --> create the appropriate freelist blocks
-        System.out.println(T.toString(parser));
-        System.out.println(T.toStringTree(parser));
-        RuleContext child = (RuleContext)T.getChild(0).getPayload();
+        //System.out.println(T.toString(parser));
+        //System.out.println(T.toStringTree(parser));
+        //RuleContext child = (RuleContext)T.getChild(0).getPayload();
         //TreeRecursion(child,parser);
-        System.out.println(child.toString(parser));
-        child = (RuleContext)child.getChild(0).getPayload();
-        System.out.println(child.toString(parser));
+        //System.out.println(child.toString(parser));
+        //child = (RuleContext)child.getChild(0).getPayload();
+        //System.out.println(child.toString(parser));
     }
 
 
