@@ -27,7 +27,7 @@ public class Transaction_proto {
 
         if (T.toStringTree(parser).contains("DONATE")){
             type = TransactionTypes.DONTATE;
-            transBlock = new Donate_Block(T.toStringTree(parser));  //constructor needed
+            transBlock = new Donate_Block(QueryString,callerAccount);
         }else if(T.toStringTree(parser).contains("FIND")){
             type = TransactionTypes.FIND;
             transBlock = new Find_Block();                          //constructor needed
@@ -43,7 +43,7 @@ public class Transaction_proto {
         }else if(T.toStringTree(parser).contains("DEFINE")){
             System.out.println("IN HERE");
             type = TransactionTypes.DEFINE;
-            transBlock = new Define_Block(QueryString,callerAccount);                        //constructor needed
+            transBlock = new Define_Block(QueryString,callerAccount);
         }else if (T.toStringTree(parser).contains("BID")){
             type = TransactionTypes.BID;
             transBlock = new Bid_Block();                           //constructor needed

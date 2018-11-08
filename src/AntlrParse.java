@@ -12,12 +12,13 @@ public class AntlrParse {
 
         for (int i=0;i<1;i++) {
 
-            Account_proto testAcc = new Account_proto();
+
 
             Ledger_proto l = new Ledger_proto();
             Transaction_Manager tm = new Transaction_Manager(l);
 
             String q = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
+           // String q = "FROM jimmy ID=7 DONATE $ 20 MONTHLY 12-24-18 TO 6-24-18 DECIDE FCFS";
             System.out.println(q);
 
             //memory and file, mal-input recorded as error
@@ -39,8 +40,14 @@ public class AntlrParse {
 
                 System.out.println("tree" + tree.toStringTree(p));
 
+                Account_proto testAcc = new Account_proto();
                 Transaction_proto test = new Transaction_proto(tree, p, testAcc);
-                System.out.println(test);
+                System.out.println(test.transBlock);
+
+                Ledger_proto ledger = new Ledger_proto();
+
+                Transaction_Manager transam = new Transaction_Manager(ledger);
+                transam.runTransaction(test);
 
             } catch (Exception e) {
                 e.printStackTrace();

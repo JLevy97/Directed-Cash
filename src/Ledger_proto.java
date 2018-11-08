@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +34,21 @@ public class Ledger_proto {
     Map<Transaction_Block_proto, Transaction_Block_proto> ExpenseMactches;          //bid matches to one chosen expense
 
     //constructor
+    public Ledger_proto(){
 
+        chain = new ArrayList<>();
+        allProjects = new ArrayList<>();
+
+        freeDonations = new ArrayList<>();
+        freeProjects = new ArrayList<>();
+        freeCalls = new ArrayList<>();
+        freeBids = new ArrayList<>();
+        freeExpenses = new ArrayList<>();
+
+        DonationMactches = new HashMap<>();
+        BidMactches = new HashMap<>();
+        ExpenseMactches = new HashMap<>();
+    }
 
     //other elements to blocks??
 

@@ -35,19 +35,16 @@ public class Transaction_Manager {
         //execute transactions that do not require a Match to proceed
         if (t.type == TransactionTypes.FIND){
             transactionCompletion(t);
-            return;
         }else if (t.type == TransactionTypes.DEFINE){
             transactionCompletion(t);
-            return;
         }else if (t.type == TransactionTypes.RATING ){
             transactionCompletion(t);
-            return;
         }else if (t.type == TransactionTypes.LOCATE ){
             transactionCompletion(t);
-            return;
         }
 
-        Matching.SweepMatch(t.transBlock,ledger);
+        System.out.println("aaaaaaaa: "+ledger.freeProjects);
+       // Matching.SweepMatch(t.transBlock,ledger);
     }
 
 
@@ -61,14 +58,15 @@ public class Transaction_Manager {
         }else if (t.type == TransactionTypes.RATING){
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.EXPENSE){
-            ledger.freeDonations.add(t.transBlock);
+            ledger.freeExpenses.add(t.transBlock);
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.CALL){
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.DEFINE){
+            ledger.freeProjects.add(t.transBlock);
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.BID){
-            ledger.freeDonations.add(t.transBlock);
+            ledger.freeBids.add(t.transBlock);
             ledger.chain.add(t);
         }else if(t.type == TransactionTypes.LOCATE){
             ledger.chain.add(t);
@@ -93,7 +91,7 @@ public class Transaction_Manager {
         }else if (t.type == TransactionTypes.CALL){
 
         }else if (t.type == TransactionTypes.DEFINE){
-
+            performDefine(tBlock);
         }else if (t.type == TransactionTypes.BID){
 
         }else if (t.type == TransactionTypes.LOCATE){
@@ -119,7 +117,7 @@ public class Transaction_Manager {
             //move money from donation into project and update project stats
             Define_Block to = (Define_Block)m.b;
             Donate_Block from = (Donate_Block)m.a;
-            Boolean function = bank.Donate(from.amount,to.project.project);
+            Boolean function = bank.Donate(from.amount,to.pr);
 
             //print that money has been moved into projct and that donation is complete
             System.out.println("Donation: "+from);
@@ -194,8 +192,7 @@ public class Transaction_Manager {
     public Transaction_proto performDefine(Transaction_Block_proto exec){
 
         //state the definition of the project and its block
-        Define_Block d = (Define_Block)exec;
-        System.out.println("Definition created: "+d);
+        System.out.println("Definition created: "+exec);
 
         return null;
     }
