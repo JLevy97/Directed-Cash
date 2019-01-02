@@ -15,7 +15,7 @@ public class Matching {
      * @param ledger
      * @return
      */
-    public static void SweepMatch(Transaction_Block_proto toMatch, Ledger_proto ledger){
+    public static Transaction_Block_proto SweepMatch(Transaction_Block_proto toMatch, Ledger_proto ledger){
 
         if(toMatch.type == TransactionTypes.DONTATE){
 
@@ -51,6 +51,8 @@ public class Matching {
                 toMatch.matched = true;
                 possibleProj.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleProj);
+
+                return match;
                 //Transaction_Manager.performDonate(match);
                /* Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
@@ -89,6 +91,8 @@ public class Matching {
                 toMatch.matched = true;
                 possibleBid.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleBid);
+
+                return match;
                 //Transaction_Manager.performExpense(match);
                 //Transaction_proto m = new Transaction_proto();
                 //m.transBlock = match;
@@ -129,38 +133,38 @@ public class Matching {
                 toMatch.matched = true;
                 possibleCall.matched = true;
                 Transaction_Block_proto match = new Match_Block_proto(toMatch,possibleCall);
+                return match;
+
                 //Transaction_Manager.performBid(match);
              /*   Transaction_proto m = new Transaction_proto();
                 m.transBlock = match;
                 ledger.chain.add(m);  */
             }
 
-        }else if (toMatch.type == TransactionTypes.CALL){
-            //sweep through bids to pick a match
-        }else if(toMatch.type == TransactionTypes.PROJECT){
-            //sweep through donors to find a match
         }else{
             //not a matching transaction type
             System.out.println("should not be matching");
         }
 
-
+        return null;
     }
 
     //does a general brute force match to catch some leftover matches. //BRUTE FORCE, NOT EFFICIENT, N^2
     public static void GeneralSweepMatching(Ledger_proto ledger){
 
+        Transaction_Block_proto fill;
+
         //sweep through donors
         for (Transaction_Block_proto x:ledger.freeDonations){
-            SweepMatch(x,ledger);
+            fill = SweepMatch(x,ledger);
         }
         //sweep through bids
         for(Transaction_Block_proto x:ledger.freeBids){
-            SweepMatch(x,ledger);
+            fill = SweepMatch(x,ledger);
         }
         //sweep through expenses
         for (Transaction_Block_proto x:ledger.freeExpenses){
-            SweepMatch(x,ledger);
+            fill = SweepMatch(x,ledger);
         }
 
     }

@@ -31,6 +31,7 @@ public class Transaction_Manager {
 
         //enter transaction into the log
         transactionEntering(t);
+        Transaction_Block_proto match = null;
 
         //execute transactions that do not require a Match to proceed
         if (t.type == TransactionTypes.FIND){
@@ -43,8 +44,8 @@ public class Transaction_Manager {
             transactionCompletion(t);
         }
 
-        System.out.println("aaaaaaaa: "+ledger.freeProjects);
-       // Matching.SweepMatch(t.transBlock,ledger);
+        //System.out.println("aaaaaaaa: "+ledger.freeProjects);
+        Transaction_Block_proto mat = Matching.SweepMatch(t.transBlock, ledger);
     }
 
 

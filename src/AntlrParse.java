@@ -5,20 +5,17 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 
-
 public class AntlrParse {
 
     public static void main(String[] args){
 
         for (int i=0;i<1;i++) {
 
-
-
             Ledger_proto l = new Ledger_proto();
             Transaction_Manager tm = new Transaction_Manager(l);
 
             String q = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
-           // String q = "FROM jimmy ID=7 DONATE $ 20 MONTHLY 12-24-18 TO 6-24-18 DECIDE FCFS";
+            String d = "FROM jimmy ID=7 DONATE $ 20 MONTHLY 12-24-18 TO 6-24-18 DECIDE FCFS";
             System.out.println(q);
 
             //memory and file, mal-input recorded as error
@@ -27,12 +24,12 @@ public class AntlrParse {
             //parse with donor query lang
             try {
 
-                //source of string to parse
+                //parse through the definition
                 //String source = "test.txt";
                 CharStream cs = CharStreams.fromString(q);
                 fullQLexer lexer = new fullQLexer(cs);
                 CommonTokenStream tk = new CommonTokenStream(lexer);
-                ParseTreeBuilder builder = new ParseTreeBuilder("prog");
+                //ParseTreeBuilder builder = new ParseTreeBuilder("prog");
                 fullQParser p = new fullQParser(tk);
                 p.setBuildParseTree(true);
                 RuleContext tree = p.newq();
@@ -48,6 +45,21 @@ public class AntlrParse {
 
                 Transaction_Manager transam = new Transaction_Manager(ledger);
                 transam.runTransaction(test);
+
+                cs = CharStreams.fromString(d);
+                lexer = new fullQLexer(cs);
+                tk = new CommonTokenStream(lexer);
+                //builder = new ParseTreeBuilder("prog");
+                p = new fullQParser(tk);
+                p.setBuildParseTree(true);
+                tree = p.newq();
+
+                Transaction_proto test2 = new Transaction_proto(tree, p, testAcc);
+                System.out.println(test2.transBlock);
+
+                transam.runTransaction(test2);
+
+                //System.out.println("chain:   "+transam.ledger.chain);
 
             } catch (Exception e) {
                 e.printStackTrace();
