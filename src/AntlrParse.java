@@ -15,7 +15,13 @@ public class AntlrParse {
             Transaction_Manager tm = new Transaction_Manager(l);
 
             String q = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
-            String d = "FROM jimmy ID=7 DONATE $ 20 MONTHLY 12-24-18 TO 6-24-18 DECIDE FCFS";
+            String don = "FROM jimmy ID=7 DONATE $ 20 MONTHLY 12-24-18 TO 6-24-18 DECIDE FCFS";
+            String f = "FROM jimmy ID= 77 FIND PROJECT";
+            String r = "FROM jimmy ID= 81 RATE kyle AS 6 / 10";
+            String lo = "LOCATE PROJECT savior";
+            String b = "FROM roxi ID=998 BID $ 100 TO kyle";
+            String c = "FROM jimmy ID= 88 CALL PROJECT foodff VENDOR RFP $ 106";
+            String ex = "FROM jimmy ID= 88 EXPENSE $ 40 TO VENDOR kenny";
             System.out.println(q);
 
             //memory and file, mal-input recorded as error
@@ -46,7 +52,7 @@ public class AntlrParse {
                 Transaction_Manager transam = new Transaction_Manager(ledger);
                 transam.runTransaction(test);
 
-                cs = CharStreams.fromString(d);
+                cs = CharStreams.fromString(don);
                 lexer = new fullQLexer(cs);
                 tk = new CommonTokenStream(lexer);
                 //builder = new ParseTreeBuilder("prog");

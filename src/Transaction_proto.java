@@ -30,26 +30,26 @@ public class Transaction_proto {
             transBlock = new Donate_Block(QueryString,callerAccount);
         }else if(T.toStringTree(parser).contains("FIND")){
             type = TransactionTypes.FIND;
-            transBlock = new Find_Block();                          //constructor needed
+            transBlock = new Find_Block(QueryString,callerAccount);                          //constructor needed
         }else if(T.toStringTree(parser).contains("RATING")){
             type = TransactionTypes.RATING;
-            transBlock = new Rating_Block();                        //constructor needed
+            transBlock = new Rating_Block(QueryString,callerAccount);                        //constructor needed
         }else if(T.toStringTree(parser).contains("EXPENSE")){
             type = TransactionTypes.EXPENSE;
-            transBlock = new Expense_Block();                       //constructor needed
+            transBlock = new Expense_Block(QueryString,callerAccount);                       //constructor needed
         }else if(T.toStringTree(parser).contains("CALL")){
             type = TransactionTypes.CALL;
-            transBlock = new Call_Block();                          //constructor needed
+            transBlock = new Call_Block(QueryString,callerAccount);                          //constructor needed
         }else if(T.toStringTree(parser).contains("DEFINE")){
             System.out.println("IN HERE");
             type = TransactionTypes.DEFINE;
             transBlock = new Define_Block(QueryString,callerAccount);
         }else if (T.toStringTree(parser).contains("BID")){
             type = TransactionTypes.BID;
-            transBlock = new Bid_Block();                           //constructor needed
+            transBlock = new Bid_Block(QueryString,callerAccount);                           //constructor needed
         }else{
             type = TransactionTypes.LOCATE;
-            transBlock = new Locate_Block();                       //constructor needed
+            transBlock = new Locate_Block(QueryString,callerAccount);                       //constructor needed
         }
 
 

@@ -13,7 +13,7 @@ from: 'FROM' Name 'ID=' Number;
 timestamp: 'TIMESTAMP' date 'T' time;           //more exact way to measure date and time
 time: Number':'Number':'Number;
 date: Number'-'Number'-'Number;
-rating: 'RATE' Name 'AS' Number'/'Number;
+rating: 'RATE' Name 'AS' Number '/' Number;
 find: 'FIND' Category;
 donate: 'DONATE' Currency Number HowOften date 'TO' date 'DECIDE FCFS'; //decide FCFS?????????????????
 where: 'WHERE' condition ('AND' condition)*;
@@ -21,8 +21,8 @@ condition: Category Op (Type | Number | Name);
 report: 'REPORT' HowOften;
 
 //aggregator
-expense: 'EXPENSE=' Currency Number 'TO VENDOR' Name;
-call: Category Name 'VENDOR RFP' Currency Number;           //RFP???????????   //Project in as Category ???
+expense: 'EXPENSE' Currency Number 'TO VENDOR' Name;
+call: 'CALL' Category Name 'VENDOR RFP' Currency Number;           //RFP???????????   //Project in as Category ???
 define: 'DEFINE' Category Name 'GOAL' Currency Number;
 url: 'URL=' Name;
 
