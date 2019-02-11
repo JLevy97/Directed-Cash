@@ -7,8 +7,9 @@ public class SysManager extends Account_proto{
 
     Consensus_Cluster parent;
 
-    public SysManager(){
+    public SysManager(Consensus_Cluster cc){
         super("SysMan", "pass", AccountTypes.SYSMAN);
+        parent = cc;
     }
 
     public void addNode(){

@@ -18,32 +18,34 @@ public class Consensus_Node { //possible leader nodes that interact with the led
     Ledger_proto blockchain;
     List<RuleContext> queryList;
 
+    Ledger_proto ledger;
     Transaction_Manager tm;
     List<Transaction_proto> transactions = new ArrayList<>();
 
-    //other network and conscensus need variables
-
-    public void run(){
-
-        //accept connections
-
-        //run transaction manager to deal with gathered queries
-
-        //Query = connection.getQuery();
-        String Query = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
-        RuleContext q = AntlrParse.parse(Query);
-        queryList.add(q);
-
-       // Transaction_proto trans = tm.CreateTransactionFromParse(q);
-        //transactions.add(trans);
-        //tm.runTransaction(trans);
-
-        //run matching on ledger periodically
-
-        //send pulse to update other nodes
-
-        //repeat until no longer leader
+    public Consensus_Node(){
 
     }
+
+    public Ledger_proto run(String Q){
+
+
+        //String Query = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
+        RuleContext q = AntlrParse.parse(Q);
+        queryList.add(q);
+
+        for (int i=0;i<queryList.size();i++){
+
+            RuleContext command = queryList.get(i);
+
+            //if the command is within DAG order, execute
+            if (DAGinterpreter.validDAGOrder(ledger,DAG,TP,KeyNames)) {
+                //execute command
+            }
+
+        }
+
+        return ledger;
+    }
+
 
 }

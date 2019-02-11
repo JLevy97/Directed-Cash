@@ -3,17 +3,10 @@ public class Abstractions {
     public static void main(String[] args){
 
         Ledger_proto a;
-        Consensus_Cluster cc;
+
 
         //create DAG
-        int[][] DAG = DAGinterpreter.buildDAG();
-
-        //Topological sort??
-
-        //create cluster
-        //initialize cluster
-        //initialize ledger
-        
+        Double[][] DAG = DAGinterpreter.buildDAG();
 
         for (int i=0;i<DAG.length;i++){
             for (int j=0;j<DAG[i].length;j++){
@@ -22,6 +15,21 @@ public class Abstractions {
             System.out.println();
         }
 
+        System.out.println();
+
+        //initialize ledger
+        Ledger_proto largeLed = new Ledger_proto();
+        //create cluster
+        Consensus_Cluster cc = new Consensus_Cluster(DAG,largeLed);
+
+        cc.addNode("test_1");
+        cc.addNode("test_2");
+        cc.addNode("test_3");
+        cc.Elections();
+
+
+        cc.networklessRun();
+        cc.Elections();
 
     }
 

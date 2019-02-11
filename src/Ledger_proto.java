@@ -21,7 +21,13 @@ public class Ledger_proto {
 
     List<Transaction_proto> chain;    //list of transactions done
     List<Project> allProjects;
-   /// List<Account_proto> possibleUsers;  //list of transactions              ??maybe accounts are kept by the cluster ---> maybe put into bank
+    List<Call_Block> allCalls;
+    List<Transaction_Block_proto> allbids;
+
+
+    /// List<Account_proto> possibleUsers;  //list of transactions              ??maybe accounts are kept by the cluster ---> maybe put into bank
+
+
 
     List<Transaction_Block_proto> freeDonations;
     List<Transaction_Block_proto> freeProjects;
@@ -38,6 +44,8 @@ public class Ledger_proto {
 
         chain = new ArrayList<>();
         allProjects = new ArrayList<>();
+        allbids = new ArrayList<>();
+        allCalls = new ArrayList<>();
 
         freeDonations = new ArrayList<>();
         freeProjects = new ArrayList<>();
