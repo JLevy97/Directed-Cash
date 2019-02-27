@@ -38,7 +38,7 @@ public class Consensus_Node { //possible leader nodes that interact with the led
             RuleContext command = queryList.get(i);
 
             //if the command is within DAG order, execute
-            if (DAGinterpreter.validDAGOrder(ledger,DAG,TP,KeyNames)) {
+            if (DAGinterpreter.validDAGOrder(ledger,DAG,KeyNames, RuleC, fullP)) {
                 //execute command
             }
 

@@ -1,6 +1,10 @@
+import org.antlr.v4.runtime.RuleContext;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class DAGinterpreter {
@@ -51,11 +55,84 @@ public class DAGinterpreter {
         return DAG;
     }
 
-    public static boolean validDAGOrder(Ledger_proto L, int[][] DAG, int[] TP, String[] nameKey){
+    public static Map<String,String> getMatches(){
+
+        Map<String,String> m = new HashMap<String,String>();
+
+        String source = "Matches.txt";
+        File file = new File(source);
+        try {
+
+            Scanner sc = new Scanner(file);
+            String line = "";
+            while (sc.hasNextLine()) {
+                line=sc.nextLine();
+                String[] MacthPart = line.split(",");
+                m.put(MacthPart[0],MacthPart[1]);
+            }
+
+            sc.close();
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return m;
+    }
+
+    public static boolean validDAGOrder(Ledger_proto L, int[][] DAG, String[] nameKey, RuleContext Q, fullQParser p){
+
+        //find block type based on Query
+        String Qstring = Q.toStringTree(p);
+        int index = -1;
+        String type = "";
+        for (int i = 0;i<nameKey.length;i++){
+            if (Qstring.contains(nameKey[i])){
+                index = i;
+                type = nameKey[i];
+            }
+        }
 
         //check if block has a prerequisite based on the DAG
+        ArrayList<Integer> preReq = new ArrayList();
+        for (int i=0;i<DAG.length;i++){
+            if (DAG[i][index]==1){
+                preReq.add(i);
+            }
+        }
 
         //if block has a prerequisite, check to make sure the pre-req exists--> return true if the case
+        for (int i = 0;i<preReq.size();i++){
+            int j = preReq.get(i);
+            String T = nameKey[j]; //what the type pf the requirement is
+
+            if (T.equals("EXPENSE")){ //expenses are dependant on a bid
+                for (int k = 0;k<L.allbids.size();k++){
+                    if (L.allbids.get(k).name.equals(T)){
+                        return true;
+                    }
+                }
+
+            }else if (T.equals("BID")){ //bids are dependant on calls
+                for (int k = 0;k<L.allCalls.size();k++){
+                    if (L.allCalls.get(k).name.equals(T)){
+                        return true;
+                    }
+                }
+
+            }else if (T.equals("CALL")){ //calls are dependant on projects existing
+                for (int k = 0;k<L.allProjects.size();k++){
+                    if (L.allProjects.get(k).name.equals(T)){
+                        return true;
+                    }
+                }
+
+            }else if (T.equals("LEDGER")){ //bubble ups are dependant on anything existing
+
+            }else{ //all other types are the first steps
+                return true;
+            }
+        }
 
         return false;
     }

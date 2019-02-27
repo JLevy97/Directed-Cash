@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -17,8 +18,9 @@ public class Consensus_Cluster {
     int[] DAGOrder;
     Ledger_proto ledger;
     boolean setElection;
+    Map<String,String> matches;
 
-    public Consensus_Cluster(Double[][] dag, Ledger_proto l){
+    public Consensus_Cluster(Double[][] dag, Map<String,String> m, Ledger_proto l){
         cluster = new ArrayList<>();
         addToClusterQueue = new ArrayList<>();
         account_protos = new ArrayList<>();
@@ -27,6 +29,7 @@ public class Consensus_Cluster {
         DAGOrder = DAGinterpreter.topologicalSort(DAG);
         ledger = l;
         setElection = false;
+        matches = m;
         //delegates = new Consensus_Node[2]; future idea that has been given up on
     }
 
