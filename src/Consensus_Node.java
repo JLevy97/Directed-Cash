@@ -12,39 +12,62 @@ public class Consensus_Node { //possible leader nodes that interact with the led
     static int Serial;
 
     boolean isLeader;
-    Consensus_Node[] delegate_nodes;
+    int current_look;
+    Consensus_Node[] delegate_nodes; // not important for current state of project
     //find way to measure heartbeat??? or lifeline
 
     Ledger_proto blockchain;
     List<RuleContext> queryList;
+    Consensus_Cluster Parent_cluster;
 
-    Ledger_proto ledger;
     Transaction_Manager tm;
-    List<Transaction_proto> transactions = new ArrayList<>();
+    List<Transaction_proto> transactions;
 
-    public Consensus_Node(){
 
+    //implement
+    public Consensus_Node(Ledger_proto L, Consensus_Cluster P){
+
+        isLeader = false;
+        blockchain = L;
+        Parent_cluster = P;
+        tm = new Transaction_Manager(blockchain);
+        transactions = new ArrayList<>();
+
+        current_look = 0;
     }
 
-    public Ledger_proto run(String Q){
+    public void updateLegder(Ledger_proto L){
+        blockchain = L;
+        tm.updateLedger(blockchain);
+    }
+
+    public Ledger_proto run(String Q,Account_proto caller){
 
 
         //String Query = "FROM brightraycharity ID=7 DEFINE PROJECT fooddrive GOAL $10000 WHERE SCHEMA=1 AND CATEGORY=FOOD";
         RuleContext q = AntlrParse.parse(Q);
+        fullQParser f = AntlrParse.GetParser(Q);
         queryList.add(q);
 
-        for (int i=0;i<queryList.size();i++){
+        for (int i=current_look;i<queryList.size();i++){
 
             RuleContext command = queryList.get(i);
 
             //if the command is within DAG order, execute
-            if (DAGinterpreter.validDAGOrder(ledger,DAG,KeyNames, RuleC, fullP)) {
+            if (DAGinterpreter.validDAGOrder(blockchain,Parent_cluster.DAG,Parent_cluster.KeyNames, q, f)) {
                 //execute command
+                Transaction_proto test = new Transaction_proto(q, f, caller);
+                tm.runTransaction(test);
+
+            }else{
+                System.out.println("transaction out of order");
+                return blockchain;
             }
 
+            current_look++;
         }
 
-        return ledger;
+        return blockchain;
     }
 
 

@@ -15,7 +15,7 @@ public class SysManager extends Account_proto{
     public void addNode(){
 
         //authorization checks;
-        parent.addToClusterQueue.add(new Consensus_Node());
+        parent.addToClusterQueue.add(new Consensus_Node(parent.ledger,parent));
     }
 
     public void addAccount(){

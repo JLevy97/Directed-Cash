@@ -14,7 +14,7 @@ public class Dynamic_Ledger {
     Map<Transaction_Block_proto,List<Transaction_Block_proto>> BidMactches;        //call matches to multiple bids
     Map<Transaction_Block_proto, Transaction_Block_proto> ExpenseMactches;
 
-    public Dynamic_Ledger(int[][] DAG,String[] KeyNames,Map<String,String> matches){
+    public Dynamic_Ledger(Double[][] DAG,String[] KeyNames,Map<String,String> matches){
 
         BigList = new ArrayList<>();
         dependenciesList = new ArrayList<ArrayList<Transaction_proto>>();

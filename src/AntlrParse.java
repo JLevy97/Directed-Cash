@@ -75,6 +75,24 @@ public class AntlrParse {
 
     }
 
+    public static fullQParser GetParser(String query){
+        fullQParser ret = null;
+        try {
+            //source of string to parse
+            //String source = "test.txt";
+            CharStream cs = CharStreams.fromString(query);   //q.codePoints().mapToObj(c -> (char) c);  //CharStreams.fromFileName(source);
+            fullQLexer lexer = new fullQLexer(cs);
+            CommonTokenStream tk = new CommonTokenStream(lexer);
+            ParseTreeBuilder builder = new ParseTreeBuilder("prog");
+            ret = new fullQParser(tk);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return ret;
+
+    }
+
     public static RuleContext parse(String query){
         RuleContext tree = null;
         try {

@@ -4,11 +4,12 @@ public class Abstractions {
 
     public static void main(String[] args){
 
-        Ledger_proto a;
-
+        //as part of the output shows that a transaction
+        //each transaction is in the DAG, not checked along the DAG
 
         //create DAG
         Double[][] DAG = DAGinterpreter.buildDAG();
+        String[] KeyNames = DAGinterpreter.getKeyNames();
         Map<String,String> matches =DAGinterpreter.getMatches();
 
         for (int i=0;i<DAG.length;i++){
@@ -22,6 +23,8 @@ public class Abstractions {
 
         //initialize ledger
         Ledger_proto largeLed = new Ledger_proto();
+        Base_Ledger b = new Base_Ledger();
+        Dynamic_Ledger d = new Dynamic_Ledger(DAG,KeyNames,matches);
         //create cluster
         Consensus_Cluster cc = new Consensus_Cluster(DAG,matches,largeLed);
 
@@ -31,8 +34,9 @@ public class Abstractions {
         cc.Elections();
 
 
-        cc.networklessRun();
         cc.Elections();
+        cc.networklessRun();
+
 
     }
 

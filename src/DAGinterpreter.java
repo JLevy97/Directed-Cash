@@ -80,7 +80,27 @@ public class DAGinterpreter {
         return m;
     }
 
-    public static boolean validDAGOrder(Ledger_proto L, int[][] DAG, String[] nameKey, RuleContext Q, fullQParser p){
+    public static String[] getKeyNames(){
+        String n = "DAGBLOCKS.txt";
+        File file = new File(n);
+        String line = "";
+        try {
+
+            Scanner sc = new Scanner(file);
+
+            if (sc.hasNextLine()) {
+                line=sc.nextLine();
+            }
+
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+
+        String[] DAGblocks = line.split(",");
+        return DAGblocks;
+    }
+
+    public static boolean validDAGOrder(Ledger_proto L, Double[][] DAG, String[] nameKey, RuleContext Q, fullQParser p){
 
         //find block type based on Query
         String Qstring = Q.toStringTree(p);
