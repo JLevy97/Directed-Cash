@@ -55,6 +55,8 @@ public class Consensus_Cluster {
 
         Ledger_proto update = leader.run(Q,testAcc);
 
+
+        System.out.println("REACH THIS");
         //update all the other nodes
         for (int i=0;i<cluster.size();i++){
             cluster.get(i).updateLegder(update);
@@ -78,7 +80,7 @@ public class Consensus_Cluster {
         //check with SYSADMIN??()
 
 
-        Consensus_Node toAdd = new Consensus_Node(ledger, this);
+        Consensus_Node toAdd = new Consensus_Node(nodeName, ledger, this);
         //place a node in the queue
         addToClusterQueue.add(toAdd);
     }
@@ -96,6 +98,7 @@ public class Consensus_Cluster {
         int newL = (int)(Math.random() * cluster.size());
 
         leader = cluster.get(newL);
+        cluster.get(newL).isLeader=true;
 
     }
 

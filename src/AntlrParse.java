@@ -1,9 +1,6 @@
 import org.antlr.runtime.debug.ParseTreeBuilder;
-import org.antlr.v4.runtime.CharStreams;
-import org.antlr.v4.runtime.RuleContext;
+import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CommonTokenStream;
 
 public class AntlrParse {
 
@@ -105,9 +102,11 @@ public class AntlrParse {
             fullQParser p = new fullQParser(tk);
             p.setBuildParseTree(true);
             tree = p.newq();
-            System.out.println("tree" + tree.toStringTree(p));
-        }catch (Exception e){
-            e.printStackTrace();
+            //System.out.println("tree" + tree.toStringTree(p));
+        }catch (RecognitionException r){
+            return tree = null;
+        } catch (Exception e){
+            //e.printStackTrace();
         }
 
         return tree;
