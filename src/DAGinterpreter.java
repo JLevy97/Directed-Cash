@@ -121,6 +121,8 @@ public class DAGinterpreter {
             }
         }
 
+        //need to change the way that names are inputed so that names can be compared for pre-requisites
+
         //if block has a prerequisite, check to make sure the pre-req exists--> return true if the case
         for (int i = 0;i<preReq.size();i++){
             int j = preReq.get(i);

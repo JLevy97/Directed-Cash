@@ -1,3 +1,5 @@
+import com.sun.source.tree.WhileLoopTree;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -47,31 +49,39 @@ public class Consensus_Cluster {
 
     public void networklessRun(){
 
-        //run the leader to the transactions following the DAG orders
-        Scanner scan = new Scanner(System.in);
-        System.out.println("enter Query");
-        String Q = scan.nextLine();
-        leader.Parent_cluster = this;
 
-        Ledger_proto update = leader.run(Q,testAcc);
+        String Q = "";
+        int loopAround = 1;
+        while(!Q.equals("end run")) { //keep the cluster working indefinably
+
+            //run the leader to the transactions following the DAG orders
+            Scanner scan = new Scanner(System.in);
+            System.out.println("enter Query "+loopAround);
+            Q = scan.nextLine();
+            leader.Parent_cluster = this;
+
+            Ledger_proto update = leader.run(Q, testAcc);
 
 
-        System.out.println("REACH THIS");
-        //update all the other nodes
-        for (int i=0;i<cluster.size();i++){
-            cluster.get(i).updateLegder(update);
-        }
+            System.out.println("REACH THIS");
+            //update all the other nodes
+            for (int i = 0; i < cluster.size(); i++) {
+                cluster.get(i).updateLegder(update);
+            }
 
-        Current_Beat++;
+            Current_Beat++;
 
-        if (Current_Beat%7==0){
-            Elections();
-        }
+            if (Current_Beat % 7 == 0) {
+                Elections();
+            }
 
         /*heartbeat goes down, or timeout, set election is true
         if(){
             setElection = true;
         }*/
+
+            loopAround++;
+        }
     }
 
     //////////////////////////////////////////////////////////// Functions for cluster operations

@@ -71,17 +71,17 @@ public class Consensus_Node { //possible leader nodes that interact with the led
             System.out.println(command.toStringTree(f));
 
             //if the command is within DAG order, execute
-            //if (DAGinterpreter.validDAGOrder(blockchain,Parent_cluster.DAG,Parent_cluster.KeyNames, q, f)) {
+            if (DAGinterpreter.validDAGOrder(blockchain,Parent_cluster.DAG,Parent_cluster.KeyNames, q, f)) {
                 //execute command
                 Transaction_proto test = new Transaction_proto(q, f, caller);
                 tm.runTransaction(test);
 
-            //}else{
-             //   System.out.println("transaction out of order");
-              //  return blockchain;
-            //}
+            }else{
+                System.out.println("transaction out of order");
+                return blockchain;
+            }
 
-            //current_look++;
+            current_look++;
         }
 
         return blockchain;

@@ -45,7 +45,7 @@ public class Transaction_Manager {
         }
 
         //System.out.println("aaaaaaaa: "+ledger.freeProjects);
-        Transaction_Block_proto mat = Matching.SweepMatch(t.transBlock, ledger);
+        //Transaction_Block_proto mat = Matching.SweepMatch(t.transBlock, ledger);
     }
 
 
@@ -79,24 +79,24 @@ public class Transaction_Manager {
     //completes this transaction
     public void transactionCompletion(Transaction_proto t){
         Transaction_Block_proto tBlock = t.transBlock;
-        boolean complete = false;
+        boolean complete = true;
 
         if (t.type == TransactionTypes.DONTATE){
-
+            performDonate(tBlock);
         }else if (t.type == TransactionTypes.FIND){
-
+            performFind(tBlock);
         }else if (t.type == TransactionTypes.RATING){
-
+            performRating(tBlock);
         }else if (t.type == TransactionTypes.EXPENSE){
-
+            performExpense(tBlock);
         }else if (t.type == TransactionTypes.CALL){
-
+            performCall(tBlock);
         }else if (t.type == TransactionTypes.DEFINE){
             performDefine(tBlock);
         }else if (t.type == TransactionTypes.BID){
-
+            performBid(tBlock);
         }else if (t.type == TransactionTypes.LOCATE){
-
+            performLocate(tBlock);
         }else{
             complete = false;
         }
