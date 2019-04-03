@@ -25,6 +25,8 @@ public class Expense_Block extends Transaction_Block_proto {
         expenseAmount = Double.parseDouble(elements[2]);
         venderName = elements[5];
 
+        name = elements[8].substring(0,elements[8].indexOf(")"));
+
         if (Qtree.contains("WHERE")){
             //process for parsing conditions
         }

@@ -26,8 +26,9 @@ public class Call_Block extends Transaction_Block_proto {
         System.out.println(definition);
 
         currency = elements[5];
-        callAmount = Double.parseDouble(elements[6]);
+        callAmount = Double.parseDouble(elements[6].substring(0,elements[6].indexOf(")")));
         categoryName = elements[2];
+        name = categoryName;
         category = elements[1];
 
 

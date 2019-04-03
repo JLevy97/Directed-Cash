@@ -1,4 +1,4 @@
-// Generated from C:/Users/User/Documents/GitHub/Directed-Cash\fullQ.g4 by ANTLR 4.6
+// Generated from C:/Users/James Levy/Documents/GitHub/Directed-Cash\fullQ.g4 by ANTLR 4.7.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class fullQParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.6", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -19,32 +19,41 @@ public class fullQParser extends Parser {
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, T__5=6, T__6=7, T__7=8, T__8=9, 
 		T__9=10, T__10=11, T__11=12, T__12=13, T__13=14, T__14=15, T__15=16, T__16=17, 
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, T__23=24, 
-		Name=25, Number=26, Currency=27, Op=28, Category=29, Type=30, HowOften=31, 
-		WS=32;
+		T__24=25, T__25=26, Name=27, Number=28, Currency=29, Op=30, Category=31, 
+		Type=32, HowOften=33, WS=34;
 	public static final int
 		RULE_newq = 0, RULE_donor = 1, RULE_aggregator = 2, RULE_vendor = 3, RULE_search = 4, 
 		RULE_locate = 5, RULE_from = 6, RULE_timestamp = 7, RULE_time = 8, RULE_date = 9, 
 		RULE_rating = 10, RULE_find = 11, RULE_donate = 12, RULE_where = 13, RULE_condition = 14, 
 		RULE_report = 15, RULE_expense = 16, RULE_call = 17, RULE_define = 18, 
 		RULE_url = 19, RULE_bid = 20;
-	public static final String[] ruleNames = {
-		"newq", "donor", "aggregator", "vendor", "search", "locate", "from", "timestamp", 
-		"time", "date", "rating", "find", "donate", "where", "condition", "report", 
-		"expense", "call", "define", "url", "bid"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"newq", "donor", "aggregator", "vendor", "search", "locate", "from", 
+			"timestamp", "time", "date", "rating", "find", "donate", "where", "condition", 
+			"report", "expense", "call", "define", "url", "bid"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'LOCATE'", "'FROM'", "'ID='", "'TIMESTAMP'", "'T'", "':'", "'-'", 
-		"'RATE'", "'AS'", "'/'", "'FIND'", "'DONATE'", "'TO'", "'DECIDE FCFS'", 
-		"'WHERE'", "'AND'", "'REPORT'", "'EXPENSE='", "'TO VENDOR'", "'VENDOR RFP'", 
-		"'DEFINE'", "'GOAL'", "'URL='", "'BID'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, "Name", "Number", "Currency", "Op", "Category", "Type", "HowOften", 
-		"WS"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'LOCATE'", "'FROM'", "'ID='", "'TIMESTAMP'", "'T'", "':'", "'-'", 
+			"'RATE'", "'AS'", "'/'", "'FIND'", "'DONATE'", "'TO'", "'DECIDE FCFS'", 
+			"'WHERE'", "'AND'", "'REPORT'", "'EXPENSE'", "'TO VENDOR'", "'ON'", "'CALL'", 
+			"'VENDOR RFP'", "'DEFINE'", "'GOAL'", "'URL='", "'BID'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, "Name", "Number", "Currency", "Op", "Category", "Type", 
+			"HowOften", "WS"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
@@ -94,6 +103,7 @@ public class fullQParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+
 	public static class NewqContext extends ParserRuleContext {
 		public DonorContext donor() {
 			return getRuleContext(DonorContext.class,0);
@@ -118,11 +128,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitNewq(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitNewq(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -164,9 +169,11 @@ public class fullQParser extends Parser {
 			}
 		}
 		catch (RecognitionException re) {
-			/*_localctx.exception = re;
+			/*
+			_localctx.exception = re;
 			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);*/
+			_errHandler.recover(this, re);
+			*/
 			throw re;
 		}
 		finally {
@@ -208,11 +215,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitDonor(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitDonor(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -323,11 +325,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitAggregator(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitAggregator(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final AggregatorContext aggregator() throws RecognitionException {
@@ -348,13 +345,13 @@ public class fullQParser extends Parser {
 				expense();
 				}
 				break;
-			case Category:
+			case T__20:
 				{
 				setState(65);
 				call();
 				}
 				break;
-			case T__20:
+			case T__22:
 				{
 				setState(66);
 				define();
@@ -376,7 +373,7 @@ public class fullQParser extends Parser {
 			setState(73);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__22) {
+			if (_la==T__24) {
 				{
 				setState(72);
 				url();
@@ -421,11 +418,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitVendor(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitVendor(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final VendorContext vendor() throws RecognitionException {
@@ -452,7 +444,7 @@ public class fullQParser extends Parser {
 			setState(81);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==T__22) {
+			if (_la==T__24) {
 				{
 				setState(80);
 				url();
@@ -490,11 +482,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitSearch(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitSearch(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -545,11 +532,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitLocate(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitLocate(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final LocateContext locate() throws RecognitionException {
@@ -591,11 +573,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitFrom(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitFrom(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -645,11 +622,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitTimestamp(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitTimestamp(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final TimestampContext timestamp() throws RecognitionException {
@@ -695,11 +667,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitTime(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitTime(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -748,11 +715,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitDate(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitDate(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -803,11 +765,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitRating(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitRating(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final RatingContext rating() throws RecognitionException {
@@ -855,11 +812,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitFind(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitFind(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final FindContext find() throws RecognitionException {
@@ -906,11 +858,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitDonate(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitDonate(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -967,11 +914,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitWhere(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitWhere(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1033,11 +975,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitCondition(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitCondition(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ConditionContext condition() throws RecognitionException {
@@ -1088,11 +1025,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitReport(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitReport(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final ReportContext report() throws RecognitionException {
@@ -1121,7 +1053,11 @@ public class fullQParser extends Parser {
 	public static class ExpenseContext extends ParserRuleContext {
 		public TerminalNode Currency() { return getToken(fullQParser.Currency, 0); }
 		public TerminalNode Number() { return getToken(fullQParser.Number, 0); }
-		public TerminalNode Name() { return getToken(fullQParser.Name, 0); }
+		public List<TerminalNode> Name() { return getTokens(fullQParser.Name); }
+		public TerminalNode Name(int i) {
+			return getToken(fullQParser.Name, i);
+		}
+		public TerminalNode Category() { return getToken(fullQParser.Category, 0); }
 		public ExpenseContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1133,11 +1069,6 @@ public class fullQParser extends Parser {
 		@Override
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitExpense(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitExpense(this);
-			else return visitor.visitChildren(this);
 		}
 	}
 
@@ -1156,6 +1087,12 @@ public class fullQParser extends Parser {
 			setState(151);
 			match(T__18);
 			setState(152);
+			match(Name);
+			setState(153);
+			match(T__19);
+			setState(154);
+			match(Category);
+			setState(155);
 			match(Name);
 			}
 		}
@@ -1187,11 +1124,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitCall(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitCall(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final CallContext call() throws RecognitionException {
@@ -1200,15 +1132,17 @@ public class fullQParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(154);
-			match(Category);
-			setState(155);
-			match(Name);
-			setState(156);
-			match(T__19);
 			setState(157);
-			match(Currency);
+			match(T__20);
 			setState(158);
+			match(Category);
+			setState(159);
+			match(Name);
+			setState(160);
+			match(T__21);
+			setState(161);
+			match(Currency);
+			setState(162);
 			match(Number);
 			}
 		}
@@ -1240,11 +1174,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitDefine(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitDefine(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final DefineContext define() throws RecognitionException {
@@ -1253,17 +1182,17 @@ public class fullQParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(160);
-			match(T__20);
-			setState(161);
-			match(Category);
-			setState(162);
-			match(Name);
-			setState(163);
-			match(T__21);
 			setState(164);
-			match(Currency);
+			match(T__22);
 			setState(165);
+			match(Category);
+			setState(166);
+			match(Name);
+			setState(167);
+			match(T__23);
+			setState(168);
+			match(Currency);
+			setState(169);
 			match(Number);
 			}
 		}
@@ -1292,11 +1221,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitUrl(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitUrl(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final UrlContext url() throws RecognitionException {
@@ -1305,9 +1229,9 @@ public class fullQParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(167);
-			match(T__22);
-			setState(168);
+			setState(171);
+			match(T__24);
+			setState(172);
 			match(Name);
 			}
 		}
@@ -1325,7 +1249,11 @@ public class fullQParser extends Parser {
 	public static class BidContext extends ParserRuleContext {
 		public TerminalNode Currency() { return getToken(fullQParser.Currency, 0); }
 		public TerminalNode Number() { return getToken(fullQParser.Number, 0); }
-		public TerminalNode Name() { return getToken(fullQParser.Name, 0); }
+		public List<TerminalNode> Name() { return getTokens(fullQParser.Name); }
+		public TerminalNode Name(int i) {
+			return getToken(fullQParser.Name, i);
+		}
+		public TerminalNode Category() { return getToken(fullQParser.Category, 0); }
 		public BidContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1338,11 +1266,6 @@ public class fullQParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof fullQListener ) ((fullQListener)listener).exitBid(this);
 		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof fullQVisitor ) return ((fullQVisitor<? extends T>)visitor).visitBid(this);
-			else return visitor.visitChildren(this);
-		}
 	}
 
 	public final BidContext bid() throws RecognitionException {
@@ -1351,15 +1274,21 @@ public class fullQParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(170);
-			match(T__23);
-			setState(171);
-			match(Currency);
-			setState(172);
-			match(Number);
-			setState(173);
-			match(T__12);
 			setState(174);
+			match(T__25);
+			setState(175);
+			match(Currency);
+			setState(176);
+			match(Number);
+			setState(177);
+			match(T__12);
+			setState(178);
+			match(Name);
+			setState(179);
+			match(T__19);
+			setState(180);
+			match(Category);
+			setState(181);
 			match(Name);
 			}
 		}
@@ -1375,7 +1304,7 @@ public class fullQParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\"\u00b3\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3$\u00ba\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\3\2\3\2\3\2\3\2\5\2\61\n\2\3"+
@@ -1385,45 +1314,47 @@ public class fullQParser extends Parser {
 		"\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\f"+
 		"\3\f\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16\3\16\3\16"+
 		"\3\16\3\16\3\17\3\17\3\17\3\17\7\17\u008b\n\17\f\17\16\17\u008e\13\17"+
-		"\3\20\3\20\3\20\3\20\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\22\3\22\3\23"+
-		"\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\24\3\24\3\24\3\24\3\25\3\25"+
-		"\3\25\3\26\3\26\3\26\3\26\3\26\3\26\3\26\2\2\27\2\4\6\b\n\f\16\20\22\24"+
-		"\26\30\32\34\36 \"$&(*\2\3\4\2\33\34  \u00ad\2\60\3\2\2\2\4\62\3\2\2\2"+
-		"\6A\3\2\2\2\bM\3\2\2\2\nU\3\2\2\2\fY\3\2\2\2\16]\3\2\2\2\20b\3\2\2\2\22"+
-		"g\3\2\2\2\24m\3\2\2\2\26s\3\2\2\2\30z\3\2\2\2\32}\3\2\2\2\34\u0086\3\2"+
-		"\2\2\36\u008f\3\2\2\2 \u0093\3\2\2\2\"\u0096\3\2\2\2$\u009c\3\2\2\2&\u00a2"+
-		"\3\2\2\2(\u00a9\3\2\2\2*\u00ac\3\2\2\2,\61\5\4\3\2-\61\5\6\4\2.\61\5\b"+
-		"\5\2/\61\5\n\6\2\60,\3\2\2\2\60-\3\2\2\2\60.\3\2\2\2\60/\3\2\2\2\61\3"+
-		"\3\2\2\2\62\64\5\16\b\2\63\65\5\20\t\2\64\63\3\2\2\2\64\65\3\2\2\2\65"+
-		"9\3\2\2\2\66:\5\32\16\2\67:\5\30\r\28:\5\26\f\29\66\3\2\2\29\67\3\2\2"+
-		"\298\3\2\2\2:<\3\2\2\2;=\5\34\17\2<;\3\2\2\2<=\3\2\2\2=?\3\2\2\2>@\5 "+
-		"\21\2?>\3\2\2\2?@\3\2\2\2@\5\3\2\2\2AE\5\16\b\2BF\5\"\22\2CF\5$\23\2D"+
-		"F\5&\24\2EB\3\2\2\2EC\3\2\2\2ED\3\2\2\2FH\3\2\2\2GI\5\34\17\2HG\3\2\2"+
-		"\2HI\3\2\2\2IK\3\2\2\2JL\5(\25\2KJ\3\2\2\2KL\3\2\2\2L\7\3\2\2\2MN\5\16"+
-		"\b\2NP\5*\26\2OQ\5\34\17\2PO\3\2\2\2PQ\3\2\2\2QS\3\2\2\2RT\5(\25\2SR\3"+
-		"\2\2\2ST\3\2\2\2T\t\3\2\2\2UW\5\f\7\2VX\5\34\17\2WV\3\2\2\2WX\3\2\2\2"+
-		"X\13\3\2\2\2YZ\7\3\2\2Z[\7\37\2\2[\\\7\33\2\2\\\r\3\2\2\2]^\7\4\2\2^_"+
-		"\7\33\2\2_`\7\5\2\2`a\7\34\2\2a\17\3\2\2\2bc\7\6\2\2cd\5\24\13\2de\7\7"+
-		"\2\2ef\5\22\n\2f\21\3\2\2\2gh\7\34\2\2hi\7\b\2\2ij\7\34\2\2jk\7\b\2\2"+
-		"kl\7\34\2\2l\23\3\2\2\2mn\7\34\2\2no\7\t\2\2op\7\34\2\2pq\7\t\2\2qr\7"+
-		"\34\2\2r\25\3\2\2\2st\7\n\2\2tu\7\33\2\2uv\7\13\2\2vw\7\34\2\2wx\7\f\2"+
-		"\2xy\7\34\2\2y\27\3\2\2\2z{\7\r\2\2{|\7\37\2\2|\31\3\2\2\2}~\7\16\2\2"+
-		"~\177\7\35\2\2\177\u0080\7\34\2\2\u0080\u0081\7!\2\2\u0081\u0082\5\24"+
-		"\13\2\u0082\u0083\7\17\2\2\u0083\u0084\5\24\13\2\u0084\u0085\7\20\2\2"+
-		"\u0085\33\3\2\2\2\u0086\u0087\7\21\2\2\u0087\u008c\5\36\20\2\u0088\u0089"+
-		"\7\22\2\2\u0089\u008b\5\36\20\2\u008a\u0088\3\2\2\2\u008b\u008e\3\2\2"+
-		"\2\u008c\u008a\3\2\2\2\u008c\u008d\3\2\2\2\u008d\35\3\2\2\2\u008e\u008c"+
-		"\3\2\2\2\u008f\u0090\7\37\2\2\u0090\u0091\7\36\2\2\u0091\u0092\t\2\2\2"+
-		"\u0092\37\3\2\2\2\u0093\u0094\7\23\2\2\u0094\u0095\7!\2\2\u0095!\3\2\2"+
-		"\2\u0096\u0097\7\24\2\2\u0097\u0098\7\35\2\2\u0098\u0099\7\34\2\2\u0099"+
-		"\u009a\7\25\2\2\u009a\u009b\7\33\2\2\u009b#\3\2\2\2\u009c\u009d\7\37\2"+
-		"\2\u009d\u009e\7\33\2\2\u009e\u009f\7\26\2\2\u009f\u00a0\7\35\2\2\u00a0"+
-		"\u00a1\7\34\2\2\u00a1%\3\2\2\2\u00a2\u00a3\7\27\2\2\u00a3\u00a4\7\37\2"+
-		"\2\u00a4\u00a5\7\33\2\2\u00a5\u00a6\7\30\2\2\u00a6\u00a7\7\35\2\2\u00a7"+
-		"\u00a8\7\34\2\2\u00a8\'\3\2\2\2\u00a9\u00aa\7\31\2\2\u00aa\u00ab\7\33"+
-		"\2\2\u00ab)\3\2\2\2\u00ac\u00ad\7\32\2\2\u00ad\u00ae\7\35\2\2\u00ae\u00af"+
-		"\7\34\2\2\u00af\u00b0\7\17\2\2\u00b0\u00b1\7\33\2\2\u00b1+\3\2\2\2\16"+
-		"\60\649<?EHKPSW\u008c";
+		"\3\20\3\20\3\20\3\20\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22"+
+		"\3\22\3\22\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\24\3\24\3\24\3\24\3\24"+
+		"\3\24\3\24\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26\3\26"+
+		"\3\26\2\2\27\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*\2\3\4\2\35"+
+		"\36\"\"\2\u00b4\2\60\3\2\2\2\4\62\3\2\2\2\6A\3\2\2\2\bM\3\2\2\2\nU\3\2"+
+		"\2\2\fY\3\2\2\2\16]\3\2\2\2\20b\3\2\2\2\22g\3\2\2\2\24m\3\2\2\2\26s\3"+
+		"\2\2\2\30z\3\2\2\2\32}\3\2\2\2\34\u0086\3\2\2\2\36\u008f\3\2\2\2 \u0093"+
+		"\3\2\2\2\"\u0096\3\2\2\2$\u009f\3\2\2\2&\u00a6\3\2\2\2(\u00ad\3\2\2\2"+
+		"*\u00b0\3\2\2\2,\61\5\4\3\2-\61\5\6\4\2.\61\5\b\5\2/\61\5\n\6\2\60,\3"+
+		"\2\2\2\60-\3\2\2\2\60.\3\2\2\2\60/\3\2\2\2\61\3\3\2\2\2\62\64\5\16\b\2"+
+		"\63\65\5\20\t\2\64\63\3\2\2\2\64\65\3\2\2\2\659\3\2\2\2\66:\5\32\16\2"+
+		"\67:\5\30\r\28:\5\26\f\29\66\3\2\2\29\67\3\2\2\298\3\2\2\2:<\3\2\2\2;"+
+		"=\5\34\17\2<;\3\2\2\2<=\3\2\2\2=?\3\2\2\2>@\5 \21\2?>\3\2\2\2?@\3\2\2"+
+		"\2@\5\3\2\2\2AE\5\16\b\2BF\5\"\22\2CF\5$\23\2DF\5&\24\2EB\3\2\2\2EC\3"+
+		"\2\2\2ED\3\2\2\2FH\3\2\2\2GI\5\34\17\2HG\3\2\2\2HI\3\2\2\2IK\3\2\2\2J"+
+		"L\5(\25\2KJ\3\2\2\2KL\3\2\2\2L\7\3\2\2\2MN\5\16\b\2NP\5*\26\2OQ\5\34\17"+
+		"\2PO\3\2\2\2PQ\3\2\2\2QS\3\2\2\2RT\5(\25\2SR\3\2\2\2ST\3\2\2\2T\t\3\2"+
+		"\2\2UW\5\f\7\2VX\5\34\17\2WV\3\2\2\2WX\3\2\2\2X\13\3\2\2\2YZ\7\3\2\2Z"+
+		"[\7!\2\2[\\\7\35\2\2\\\r\3\2\2\2]^\7\4\2\2^_\7\35\2\2_`\7\5\2\2`a\7\36"+
+		"\2\2a\17\3\2\2\2bc\7\6\2\2cd\5\24\13\2de\7\7\2\2ef\5\22\n\2f\21\3\2\2"+
+		"\2gh\7\36\2\2hi\7\b\2\2ij\7\36\2\2jk\7\b\2\2kl\7\36\2\2l\23\3\2\2\2mn"+
+		"\7\36\2\2no\7\t\2\2op\7\36\2\2pq\7\t\2\2qr\7\36\2\2r\25\3\2\2\2st\7\n"+
+		"\2\2tu\7\35\2\2uv\7\13\2\2vw\7\36\2\2wx\7\f\2\2xy\7\36\2\2y\27\3\2\2\2"+
+		"z{\7\r\2\2{|\7!\2\2|\31\3\2\2\2}~\7\16\2\2~\177\7\37\2\2\177\u0080\7\36"+
+		"\2\2\u0080\u0081\7#\2\2\u0081\u0082\5\24\13\2\u0082\u0083\7\17\2\2\u0083"+
+		"\u0084\5\24\13\2\u0084\u0085\7\20\2\2\u0085\33\3\2\2\2\u0086\u0087\7\21"+
+		"\2\2\u0087\u008c\5\36\20\2\u0088\u0089\7\22\2\2\u0089\u008b\5\36\20\2"+
+		"\u008a\u0088\3\2\2\2\u008b\u008e\3\2\2\2\u008c\u008a\3\2\2\2\u008c\u008d"+
+		"\3\2\2\2\u008d\35\3\2\2\2\u008e\u008c\3\2\2\2\u008f\u0090\7!\2\2\u0090"+
+		"\u0091\7 \2\2\u0091\u0092\t\2\2\2\u0092\37\3\2\2\2\u0093\u0094\7\23\2"+
+		"\2\u0094\u0095\7#\2\2\u0095!\3\2\2\2\u0096\u0097\7\24\2\2\u0097\u0098"+
+		"\7\37\2\2\u0098\u0099\7\36\2\2\u0099\u009a\7\25\2\2\u009a\u009b\7\35\2"+
+		"\2\u009b\u009c\7\26\2\2\u009c\u009d\7!\2\2\u009d\u009e\7\35\2\2\u009e"+
+		"#\3\2\2\2\u009f\u00a0\7\27\2\2\u00a0\u00a1\7!\2\2\u00a1\u00a2\7\35\2\2"+
+		"\u00a2\u00a3\7\30\2\2\u00a3\u00a4\7\37\2\2\u00a4\u00a5\7\36\2\2\u00a5"+
+		"%\3\2\2\2\u00a6\u00a7\7\31\2\2\u00a7\u00a8\7!\2\2\u00a8\u00a9\7\35\2\2"+
+		"\u00a9\u00aa\7\32\2\2\u00aa\u00ab\7\37\2\2\u00ab\u00ac\7\36\2\2\u00ac"+
+		"\'\3\2\2\2\u00ad\u00ae\7\33\2\2\u00ae\u00af\7\35\2\2\u00af)\3\2\2\2\u00b0"+
+		"\u00b1\7\34\2\2\u00b1\u00b2\7\37\2\2\u00b2\u00b3\7\36\2\2\u00b3\u00b4"+
+		"\7\17\2\2\u00b4\u00b5\7\35\2\2\u00b5\u00b6\7\26\2\2\u00b6\u00b7\7!\2\2"+
+		"\u00b7\u00b8\7\35\2\2\u00b8+\3\2\2\2\16\60\649<?EHKPSW\u008c";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

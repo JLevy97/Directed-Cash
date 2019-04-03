@@ -34,6 +34,7 @@ public class Consensus_Cluster {
         leader = null;
         DAG = dag;
         DAGOrder = DAGinterpreter.topologicalSort(DAG);
+        KeyNames = DAGinterpreter.getKeyNames();
         ledger = l;
         setElection = false;
         matches = m;

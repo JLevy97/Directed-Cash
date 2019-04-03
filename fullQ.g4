@@ -21,13 +21,13 @@ condition: Category Op (Type | Number | Name);
 report: 'REPORT' HowOften;
 
 //aggregator
-expense: 'EXPENSE' Currency Number 'TO VENDOR' Name;
-call: 'CALL' Category Name 'VENDOR RFP' Currency Number;           //RFP???????????   //Project in as Category ???
+expense: 'EXPENSE' Currency Number 'TO VENDOR' Name 'ON' Category Name;
+call: 'CALL' Category Name 'VENDOR RFP' Currency Number ;           //RFP???????????   //Project in as Category ???
 define: 'DEFINE' Category Name 'GOAL' Currency Number;
 url: 'URL=' Name;
 
 //vendor
-bid: 'BID' Currency Number 'TO' Name;
+bid: 'BID' Currency Number 'TO' Name 'ON' Category Name;
 
 Name: ('a'..'z')+;                                          // | 'A'..'Z')+;           find way to make capital without obscuring types & cannot currently have spaces
 Number: [0-9]+;

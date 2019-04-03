@@ -38,7 +38,6 @@ public class Transaction_Manager {
             transactionCompletion(t);
         }else if (t.type == TransactionTypes.DEFINE){
             transactionCompletion(t);
-        }else if (t.type == TransactionTypes.RATING ){
             transactionCompletion(t);
         }else if (t.type == TransactionTypes.LOCATE ){
             transactionCompletion(t);
@@ -62,11 +61,15 @@ public class Transaction_Manager {
             ledger.freeExpenses.add(t.transBlock);
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.CALL){
+            ledger.allCalls.add(t.transBlock);
+            ledger.freeCalls.add(t.transBlock);
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.DEFINE){
+            ledger.allProjects.add(t.transBlock);
             ledger.freeProjects.add(t.transBlock);
             ledger.chain.add(t);
         }else if (t.type == TransactionTypes.BID){
+            ledger.allbids.add(t.transBlock);
             ledger.freeBids.add(t.transBlock);
             ledger.chain.add(t);
         }else if(t.type == TransactionTypes.LOCATE){
@@ -181,7 +184,7 @@ public class Transaction_Manager {
         //add call
         for (int i = 0;i<ledger.allProjects.size();i++){
             if (ledger.allProjects.get(i).name.equals(c.categoryName)){
-                ledger.allProjects.get(i).calls.add(c);
+                //ledger.allProjects.get(i).calls.add(c);                            check
                 System.out.println("call added to: "+ledger.allProjects.get(i));
             }
         }

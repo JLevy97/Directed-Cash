@@ -20,8 +20,8 @@ public class Ledger_proto {
      */
 
     List<Transaction_proto> chain;    //list of transactions done
-    List<Project> allProjects;
-    List<Call_Block> allCalls;
+    List<Transaction_Block_proto> allProjects;
+    List<Transaction_Block_proto> allCalls;
     List<Transaction_Block_proto> allbids;
 
 

@@ -16,9 +16,9 @@ public class AntlrParse {
             String f = "FROM jimmy ID= 77 FIND PROJECT";
             String r = "FROM jimmy ID= 81 RATE kyle AS 6 / 10";
             String lo = "LOCATE PROJECT savior";
-            String b = "FROM roxi ID=998 BID $ 100 TO kyle";
-            String c = "FROM jimmy ID= 88 CALL PROJECT foodff VENDOR RFP $ 106";
-            String ex = "FROM jimmy ID= 88 EXPENSE $ 40 TO VENDOR kenny";
+            String b = "FROM roxi ID=998 BID $ 100 TO kyle ON PROJECT fooddrive";
+            String c = "FROM jimmy ID= 88 CALL PROJECT fooddrive VENDOR RFP $ 106";
+            String ex = "FROM jimmy ID= 88 EXPENSE $ 40 TO VENDOR kenny ON PROJECT fooddrive";
             System.out.println(q);
 
             //memory and file, mal-input recorded as error
@@ -104,6 +104,7 @@ public class AntlrParse {
             tree = p.newq();
             //System.out.println("tree" + tree.toStringTree(p));
         }catch (RecognitionException r){
+            System.out.println("RECONGNITION CATCHER");
             return tree = null;
         } catch (Exception e){
             //e.printStackTrace();

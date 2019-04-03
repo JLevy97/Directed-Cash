@@ -104,6 +104,7 @@ public class DAGinterpreter {
 
         //find block type based on Query
         String Qstring = Q.toStringTree(p);
+        System.out.println(Qstring);
         int index = -1;
         String type = "";
         for (int i = 0;i<nameKey.length;i++){
@@ -111,6 +112,10 @@ public class DAGinterpreter {
                 index = i;
                 type = nameKey[i];
             }
+        }
+
+        if (index == -1){
+            return false;
         }
 
         //check if block has a prerequisite based on the DAG
@@ -128,21 +133,21 @@ public class DAGinterpreter {
             int j = preReq.get(i);
             String T = nameKey[j]; //what the type pf the requirement is
 
-            if (T.equals("EXPENSE")){ //expenses are dependant on a bid
+            if (T.equals("bid")){ //expenses are dependant on a bid
                 for (int k = 0;k<L.allbids.size();k++){
                     if (L.allbids.get(k).name.equals(T)){
                         return true;
                     }
                 }
 
-            }else if (T.equals("BID")){ //bids are dependant on calls
+            }else if (T.equals("call")){ //bids are dependant on calls
                 for (int k = 0;k<L.allCalls.size();k++){
                     if (L.allCalls.get(k).name.equals(T)){
                         return true;
                     }
                 }
 
-            }else if (T.equals("CALL")){ //calls are dependant on projects existing
+            }else if (T.equals("define")){ //calls are dependant on projects existing
                 for (int k = 0;k<L.allProjects.size();k++){
                     if (L.allProjects.get(k).name.equals(T)){
                         return true;
@@ -154,6 +159,10 @@ public class DAGinterpreter {
             }else{ //all other types are the first steps
                 return true;
             }
+        }
+
+        if (preReq.size() == 0){
+            return true;
         }
 
         return false;

@@ -29,32 +29,32 @@
         <counts>
           <entry key="DAGBLOCKS" value="1" />
           <entry key="class" value="8" />
-          <entry key="g4" value="2" />
-          <entry key="java" value="58" />
-          <entry key="txt" value="2" />
+          <entry key="g4" value="5" />
+          <entry key="java" value="79" />
+          <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="1" />
+          <entry key="ANTLR v4 grammar file" value="4" />
           <entry key="CLASS" value="8" />
-          <entry key="JAVA" value="58" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JAVA" value="79" />
+          <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="DAGBLOCKS" value="73" />
-          <entry key="g4" value="9" />
-          <entry key="java" value="7066" />
-          <entry key="txt" value="242" />
+          <entry key="g4" value="26" />
+          <entry key="java" value="7444" />
+          <entry key="txt" value="251" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ANTLR v4 grammar file" value="9" />
-          <entry key="JAVA" value="7066" />
-          <entry key="PLAIN_TEXT" value="315" />
+          <entry key="ANTLR v4 grammar file" value="26" />
+          <entry key="JAVA" value="7444" />
+          <entry key="PLAIN_TEXT" value="324" />
         </counts>
       </usages-collector>
     </session>
@@ -62,19 +62,69 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Abstractions.java">
+        <entry file="file://$PROJECT_DIR$/src/AntlrParse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="37" selection-start-line="37" selection-end-line="37" />
+            <state relative-caret-position="206">
+              <caret line="19" column="81" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="81" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Expense_Block.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="27" column="65" lean-forward="true" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fullQ.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-85">
+              <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Transaction_Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2380">
+              <caret line="185" column="45" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#432#433#0" expanded="true" />
+                <element signature="e#458#459#0" expanded="true" />
+                <element signature="method#performBid#0;class#Transaction_Manager#0" />
+                <element signature="method#performLocate#0;class#Transaction_Manager#0" />
+                <element signature="e#7046#7110#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ledger_proto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="e#174#201#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Consensus_Cluster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="102">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Consensus_Cluster#0;class#Consensus_Cluster#0" />
@@ -89,17 +139,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Consensus_Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Matching.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-478">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="28">
+              <caret line="69" selection-start-line="69" selection-end-line="69" />
             </state>
           </provider>
         </entry>
@@ -107,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAGinterpreter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="123" column="104" selection-start-line="123" selection-start-column="104" selection-end-line="123" selection-end-column="104" />
+            <state relative-caret-position="127">
+              <caret line="105" selection-start-line="105" selection-end-line="105" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#buildDAG#0;class#DAGinterpreter#0" />
@@ -116,50 +157,6 @@
                 <element signature="method#getKeyNames#0;class#DAGinterpreter#0" />
                 <element signature="method#topologicalSort#0;class#DAGinterpreter#0" />
                 <element signature="method#visit#0;class#DAGinterpreter#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Donate_Block.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Transaction_Block_proto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Transaction_Manager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#458#459#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AntlrParse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,32 +186,34 @@
         <option value="$PROJECT_DIR$/src/Transaction_proto.java" />
         <option value="$PROJECT_DIR$/src/Locate_Block.java" />
         <option value="$PROJECT_DIR$/src/Rating_Block.java" />
-        <option value="$PROJECT_DIR$/src/Bid_Block.java" />
-        <option value="$PROJECT_DIR$/fullQ.g4" />
-        <option value="$PROJECT_DIR$/src/Call_Block.java" />
-        <option value="$PROJECT_DIR$/src/Expense_Block.java" />
         <option value="$PROJECT_DIR$/src/Generalized_Tests/Abstractions.java" />
         <option value="$PROJECT_DIR$/src/Generalized_Tests/DAG.txt" />
         <option value="$PROJECT_DIR$/src/Generalized_Tests/DAGinterpreter.java" />
         <option value="$PROJECT_DIR$/DAGBLOCKS" />
-        <option value="$PROJECT_DIR$/DAGBLOCKS.txt" />
         <option value="$PROJECT_DIR$/DAG.txt" />
-        <option value="$PROJECT_DIR$/src/Ledger_proto.java" />
         <option value="$PROJECT_DIR$/src/Base_Ledger.java" />
         <option value="$PROJECT_DIR$/Matches.txt" />
         <option value="$PROJECT_DIR$/src/Dynamic_Ledger.java" />
         <option value="$PROJECT_DIR$/src/Abstractions.java" />
         <option value="$PROJECT_DIR$/src/SysManager.java" />
-        <option value="$PROJECT_DIR$/src/AntlrParse.java" />
+        <option value="$PROJECT_DIR$/src/Define_Block.java" />
+        <option value="$PROJECT_DIR$/src/Donate_Block.java" />
+        <option value="$PROJECT_DIR$/fullQ.g4" />
         <option value="$PROJECT_DIR$/src/fullQParser.java" />
-        <option value="$PROJECT_DIR$/src/Consensus_Cluster.java" />
+        <option value="$PROJECT_DIR$/src/Call_Block.java" />
+        <option value="$PROJECT_DIR$/src/Ledger_proto.java" />
         <option value="$PROJECT_DIR$/src/Transaction_Manager.java" />
         <option value="$PROJECT_DIR$/src/Consensus_Node.java" />
+        <option value="$PROJECT_DIR$/src/Consensus_Cluster.java" />
+        <option value="$PROJECT_DIR$/DAGBLOCKS.txt" />
+        <option value="$PROJECT_DIR$/src/AntlrParse.java" />
+        <option value="$PROJECT_DIR$/src/Bid_Block.java" />
+        <option value="$PROJECT_DIR$/src/Expense_Block.java" />
         <option value="$PROJECT_DIR$/src/DAGinterpreter.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1750" />
@@ -246,8 +245,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554076387729" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Directed-Cash/antlr-4.7.2-complete.jar!/" />
+    <property name="$PROJECT_DIR$/fullQ.g4::/auto-gen" value="false" />
+    <property name="$PROJECT_DIR$/fullQ.g4::/gen-listener" value="true" />
+    <property name="$PROJECT_DIR$/fullQ.g4::/gen-visitor" value="false" />
+    <property name="$PROJECT_DIR$/fullQ.g4::/output-dir" value="C:\Users\James Levy\Documents\GitHub\Directed-Cash\src" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554239261406" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -305,9 +308,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19932885" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19932885" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -316,8 +319,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41784704" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.47733712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36827195" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.388102" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -374,12 +377,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Consensus_Node.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AntlrParse.java</url>
           <line>40</line>
           <properties />
@@ -393,15 +390,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Consensus_Cluster.java</url>
-          <line>62</line>
+          <line>63</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/DAGinterpreter.java</url>
-          <line>104</line>
+          <url>file://$PROJECT_DIR$/src/Consensus_Node.java</url>
+          <line>69</line>
           <properties />
-          <option name="timeStamp" value="20" />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DAGinterpreter.java</url>
+          <line>105</line>
+          <properties />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -410,34 +413,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Find_Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Locate_Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Call_Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Expense_Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Rating_Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -447,16 +422,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testGrammer.g4">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAG.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DAGBLOCKS.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="43" lean-forward="true" selection-start-column="43" selection-end-column="43" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Base_Ledger.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -468,35 +433,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bid_Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Define_Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Matches.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Ledger_proto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="34" column="43" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
-          <folding>
-            <element signature="e#174#201#0" />
-            <element signature="method#Ledger_proto#0;class#Ledger_proto#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -511,31 +451,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fullQ.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="3" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="1836" selection-start-line="1836" selection-end-line="1836" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../Directed-Cash/antlr-4.7.2-complete.jar!/org/antlr/v4/runtime/RecognitionException.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Transaction_proto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -550,111 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fullQParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="170" column="9" lean-forward="true" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
-          <folding>
-            <element signature="e#5500#5501#0" expanded="true" />
-            <element signature="e#5551#5552#0" expanded="true" />
-            <element signature="e#5585#5586#0" expanded="true" />
-            <element signature="e#5638#5639#0" expanded="true" />
-            <element signature="e#5668#5669#0" expanded="true" />
-            <element signature="e#5719#5720#0" expanded="true" />
-            <element signature="e#5753#5754#0" expanded="true" />
-            <element signature="e#5806#5807#0" expanded="true" />
-            <element signature="e#5846#5847#0" expanded="true" />
-            <element signature="e#5902#5903#0" expanded="true" />
-            <element signature="e#5934#5935#0" expanded="true" />
-            <element signature="e#5986#5987#0" expanded="true" />
-            <element signature="e#6020#6021#0" expanded="true" />
-            <element signature="e#6073#6074#0" expanded="true" />
-            <element signature="e#6142#6143#0" expanded="true" />
-            <element signature="e#6179#6180#0" expanded="true" />
-            <element signature="e#8090#8091#0" expanded="true" />
-            <element signature="e#8141#8142#0" expanded="true" />
-            <element signature="e#8177#8178#0" expanded="true" />
-            <element signature="e#8231#8232#0" expanded="true" />
-            <element signature="e#8261#8262#0" expanded="true" />
-            <element signature="e#8312#8313#0" expanded="true" />
-            <element signature="e#8346#8347#0" expanded="true" />
-            <element signature="e#8399#8400#0" expanded="true" />
-            <element signature="e#8431#8432#0" expanded="true" />
-            <element signature="e#8483#8484#0" expanded="true" />
-            <element signature="e#8511#8512#0" expanded="true" />
-            <element signature="e#8561#8562#0" expanded="true" />
-            <element signature="e#8635#8636#0" expanded="true" />
-            <element signature="e#8672#8673#0" expanded="true" />
-            <element signature="e#10486#10487#0" expanded="true" />
-            <element signature="e#10537#10538#0" expanded="true" />
-            <element signature="e#10565#10566#0" expanded="true" />
-            <element signature="e#10615#10616#0" expanded="true" />
-            <element signature="e#10647#10648#0" expanded="true" />
-            <element signature="e#10699#10700#0" expanded="true" />
-            <element signature="e#10727#10728#0" expanded="true" />
-            <element signature="e#10777#10778#0" expanded="true" />
-            <element signature="e#10847#10848#0" expanded="true" />
-            <element signature="e#10884#10885#0" expanded="true" />
-            <element signature="e#12351#12352#0" expanded="true" />
-            <element signature="e#12404#12405#0" expanded="true" />
-            <element signature="e#12436#12437#0" expanded="true" />
-            <element signature="e#12488#12489#0" expanded="true" />
-            <element signature="e#12558#12559#0" expanded="true" />
-            <element signature="e#12595#12596#0" expanded="true" />
-            <element signature="e#14088#14089#0" expanded="true" />
-            <element signature="e#14125#14126#0" expanded="true" />
-            <element signature="e#15536#15537#0" expanded="true" />
-            <element signature="e#15573#15574#0" expanded="true" />
-            <element signature="e#16818#16819#0" expanded="true" />
-            <element signature="e#16869#16870#0" expanded="true" />
-            <element signature="e#16899#16900#0" expanded="true" />
-            <element signature="e#16950#16951#0" expanded="true" />
-            <element signature="e#17023#17024#0" expanded="true" />
-            <element signature="e#17060#17061#0" expanded="true" />
-            <element signature="e#18420#18421#0" expanded="true" />
-            <element signature="e#18467#18468#0" expanded="true" />
-            <element signature="e#18535#18536#0" expanded="true" />
-            <element signature="e#18572#18573#0" expanded="true" />
-            <element signature="e#19941#19942#0" expanded="true" />
-            <element signature="e#19988#19989#0" expanded="true" />
-            <element signature="e#20056#20057#0" expanded="true" />
-            <element signature="e#20093#20094#0" expanded="true" />
-            <element signature="e#21535#21536#0" expanded="true" />
-            <element signature="e#21582#21583#0" expanded="true" />
-            <element signature="e#21652#21653#0" expanded="true" />
-            <element signature="e#21689#21690#0" expanded="true" />
-            <element signature="e#23138#23139#0" expanded="true" />
-            <element signature="e#23175#23176#0" expanded="true" />
-            <element signature="e#24595#24596#0" expanded="true" />
-            <element signature="e#24645#24646#0" expanded="true" />
-            <element signature="e#24680#24681#0" expanded="true" />
-            <element signature="e#24731#24732#0" expanded="true" />
-            <element signature="e#24801#24802#0" expanded="true" />
-            <element signature="e#24838#24839#0" expanded="true" />
-            <element signature="e#26254#26255#0" expanded="true" />
-            <element signature="e#26309#26310#0" expanded="true" />
-            <element signature="e#26354#26355#0" expanded="true" />
-            <element signature="e#26410#26411#0" expanded="true" />
-            <element signature="e#26479#26480#0" expanded="true" />
-            <element signature="e#26516#26517#0" expanded="true" />
-            <element signature="e#28387#28388#0" expanded="true" />
-            <element signature="e#28424#28425#0" expanded="true" />
-            <element signature="e#30087#30088#0" expanded="true" />
-            <element signature="e#30124#30125#0" expanded="true" />
-            <element signature="e#31590#31591#0" expanded="true" />
-            <element signature="e#31627#31628#0" expanded="true" />
-            <element signature="e#33280#33281#0" expanded="true" />
-            <element signature="e#33317#33318#0" expanded="true" />
-            <element signature="e#34950#34951#0" expanded="true" />
-            <element signature="e#34987#34988#0" expanded="true" />
-            <element signature="e#36434#36435#0" expanded="true" />
-            <element signature="e#36471#36472#0" expanded="true" />
-            <element signature="e#37898#37899#0" expanded="true" />
-            <element signature="e#37935#37936#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -689,60 +503,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Transaction_Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Abstractions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Consensus_Cluster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Consensus_Cluster#0;class#Consensus_Cluster#0" />
-            <element signature="method#main#0;class#Consensus_Cluster#0" />
-            <element signature="method#addNode#0;class#Consensus_Cluster#0" />
-            <element signature="method#Elections#0;class#Consensus_Cluster#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AntlrParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Matching.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-478">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Consensus_Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -753,10 +517,264 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAGinterpreter.java">
+    <entry file="file://$PROJECT_DIR$/src/Define_Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAG.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Donate_Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Find_Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="1836" selection-start-line="1836" selection-end-line="1836" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Locate_Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Call_Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="30" column="15" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Transaction_proto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Abstractions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fullQParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="176" column="17" selection-start-line="176" selection-start-column="17" selection-end-line="176" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#347#416#0" expanded="true" />
+            <element signature="e#3223#3224#0" expanded="true" />
+            <element signature="e#3247#3248#0" expanded="true" />
+            <element signature="e#3297#3298#0" expanded="true" />
+            <element signature="e#3321#3322#0" expanded="true" />
+            <element signature="e#3818#3819#0" expanded="true" />
+            <element signature="e#3870#3871#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3969#3970#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4056#4057#0" expanded="true" />
+            <element signature="e#4090#4091#0" expanded="true" />
+            <element signature="e#4143#4144#0" expanded="true" />
+            <element signature="e#4211#4212#0" expanded="true" />
+            <element signature="e#4248#4249#0" expanded="true" />
+            <element signature="e#5614#5615#0" expanded="true" />
+            <element signature="e#5665#5666#0" expanded="true" />
+            <element signature="e#5699#5700#0" expanded="true" />
+            <element signature="e#5752#5753#0" expanded="true" />
+            <element signature="e#5782#5783#0" expanded="true" />
+            <element signature="e#5833#5834#0" expanded="true" />
+            <element signature="e#5867#5868#0" expanded="true" />
+            <element signature="e#5920#5921#0" expanded="true" />
+            <element signature="e#5960#5961#0" expanded="true" />
+            <element signature="e#6016#6017#0" expanded="true" />
+            <element signature="e#6048#6049#0" expanded="true" />
+            <element signature="e#6100#6101#0" expanded="true" />
+            <element signature="e#6134#6135#0" expanded="true" />
+            <element signature="e#6187#6188#0" expanded="true" />
+            <element signature="e#6256#6257#0" expanded="true" />
+            <element signature="e#6293#6294#0" expanded="true" />
+            <element signature="e#7977#7978#0" expanded="true" />
+            <element signature="e#8028#8029#0" expanded="true" />
+            <element signature="e#8064#8065#0" expanded="true" />
+            <element signature="e#8118#8119#0" expanded="true" />
+            <element signature="e#8148#8149#0" expanded="true" />
+            <element signature="e#8199#8200#0" expanded="true" />
+            <element signature="e#8233#8234#0" expanded="true" />
+            <element signature="e#8286#8287#0" expanded="true" />
+            <element signature="e#8318#8319#0" expanded="true" />
+            <element signature="e#8370#8371#0" expanded="true" />
+            <element signature="e#8398#8399#0" expanded="true" />
+            <element signature="e#8448#8449#0" expanded="true" />
+            <element signature="e#8522#8523#0" expanded="true" />
+            <element signature="e#8559#8560#0" expanded="true" />
+            <element signature="e#10138#10139#0" expanded="true" />
+            <element signature="e#10189#10190#0" expanded="true" />
+            <element signature="e#10217#10218#0" expanded="true" />
+            <element signature="e#10267#10268#0" expanded="true" />
+            <element signature="e#10299#10300#0" expanded="true" />
+            <element signature="e#10351#10352#0" expanded="true" />
+            <element signature="e#10379#10380#0" expanded="true" />
+            <element signature="e#10429#10430#0" expanded="true" />
+            <element signature="e#10499#10500#0" expanded="true" />
+            <element signature="e#10536#10537#0" expanded="true" />
+            <element signature="e#11775#11776#0" expanded="true" />
+            <element signature="e#11828#11829#0" expanded="true" />
+            <element signature="e#11860#11861#0" expanded="true" />
+            <element signature="e#11912#11913#0" expanded="true" />
+            <element signature="e#11982#11983#0" expanded="true" />
+            <element signature="e#12019#12020#0" expanded="true" />
+            <element signature="e#13284#13285#0" expanded="true" />
+            <element signature="e#13321#13322#0" expanded="true" />
+            <element signature="e#14504#14505#0" expanded="true" />
+            <element signature="e#14541#14542#0" expanded="true" />
+            <element signature="e#15560#15561#0" expanded="true" />
+            <element signature="e#15611#15612#0" expanded="true" />
+            <element signature="e#15641#15642#0" expanded="true" />
+            <element signature="e#15692#15693#0" expanded="true" />
+            <element signature="e#15765#15766#0" expanded="true" />
+            <element signature="e#15802#15803#0" expanded="true" />
+            <element signature="e#16931#16932#0" expanded="true" />
+            <element signature="e#16978#16979#0" expanded="true" />
+            <element signature="e#17046#17047#0" expanded="true" />
+            <element signature="e#17083#17084#0" expanded="true" />
+            <element signature="e#18226#18227#0" expanded="true" />
+            <element signature="e#18273#18274#0" expanded="true" />
+            <element signature="e#18341#18342#0" expanded="true" />
+            <element signature="e#18378#18379#0" expanded="true" />
+            <element signature="e#19594#19595#0" expanded="true" />
+            <element signature="e#19641#19642#0" expanded="true" />
+            <element signature="e#19711#19712#0" expanded="true" />
+            <element signature="e#19748#19749#0" expanded="true" />
+            <element signature="e#20969#20970#0" expanded="true" />
+            <element signature="e#21006#21007#0" expanded="true" />
+            <element signature="e#22200#22201#0" expanded="true" />
+            <element signature="e#22250#22251#0" expanded="true" />
+            <element signature="e#22285#22286#0" expanded="true" />
+            <element signature="e#22336#22337#0" expanded="true" />
+            <element signature="e#22406#22407#0" expanded="true" />
+            <element signature="e#22443#22444#0" expanded="true" />
+            <element signature="e#23631#23632#0" expanded="true" />
+            <element signature="e#23686#23687#0" expanded="true" />
+            <element signature="e#23731#23732#0" expanded="true" />
+            <element signature="e#23787#23788#0" expanded="true" />
+            <element signature="e#23856#23857#0" expanded="true" />
+            <element signature="e#23893#23894#0" expanded="true" />
+            <element signature="e#25537#25538#0" expanded="true" />
+            <element signature="e#25574#25575#0" expanded="true" />
+            <element signature="e#27006#27007#0" expanded="true" />
+            <element signature="e#27043#27044#0" expanded="true" />
+            <element signature="e#28250#28251#0" expanded="true" />
+            <element signature="e#28295#28296#0" expanded="true" />
+            <element signature="e#28445#28446#0" expanded="true" />
+            <element signature="e#28482#28483#0" expanded="true" />
+            <element signature="e#30013#30014#0" expanded="true" />
+            <element signature="e#30050#30051#0" expanded="true" />
+            <element signature="e#31492#31493#0" expanded="true" />
+            <element signature="e#31529#31530#0" expanded="true" />
+            <element signature="e#32748#32749#0" expanded="true" />
+            <element signature="e#32785#32786#0" expanded="true" />
+            <element signature="e#33960#33961#0" expanded="true" />
+            <element signature="e#34005#34006#0" expanded="true" />
+            <element signature="e#34151#34152#0" expanded="true" />
+            <element signature="e#34188#34189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAGBLOCKS.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" selection-start-column="51" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Ledger_proto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="e#174#201#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fullQ.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="1" column="2" lean-forward="true" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Transaction_Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="185" column="45" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#458#459#0" expanded="true" />
+            <element signature="method#performBid#0;class#Transaction_Manager#0" />
+            <element signature="method#performLocate#0;class#Transaction_Manager#0" />
+            <element signature="e#7046#7110#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bid_Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="20" column="65" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Expense_Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="123" column="104" selection-start-line="123" selection-start-column="104" selection-end-line="123" selection-end-column="104" />
+          <caret line="27" column="65" lean-forward="true" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AntlrParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="19" column="81" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Consensus_Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAGinterpreter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDAG#0;class#DAGinterpreter#0" />
@@ -768,10 +786,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Donate_Block.java">
+    <entry file="file://$PROJECT_DIR$/src/Consensus_Cluster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state relative-caret-position="102">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Consensus_Cluster#0;class#Consensus_Cluster#0" />
+            <element signature="method#main#0;class#Consensus_Cluster#0" />
+            <element signature="method#addNode#0;class#Consensus_Cluster#0" />
+            <element signature="method#Elections#0;class#Consensus_Cluster#0" />
+          </folding>
         </state>
       </provider>
     </entry>

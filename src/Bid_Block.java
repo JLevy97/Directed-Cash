@@ -18,7 +18,7 @@ public class Bid_Block extends Transaction_Block_proto {
         currency = elements[1];
         amount = Double.parseDouble(elements[2]);
         to = elements[4];
-
+        name = elements[7].substring(0,elements[7].indexOf(")"));
 
         if (Qtree.contains("WHERE")){
             //process for parsing conditions

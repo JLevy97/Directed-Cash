@@ -22,14 +22,16 @@ T__20=21
 T__21=22
 T__22=23
 T__23=24
-Name=25
-Number=26
-Currency=27
-Op=28
-Category=29
-Type=30
-HowOften=31
-WS=32
+T__24=25
+T__25=26
+Name=27
+Number=28
+Currency=29
+Op=30
+Category=31
+Type=32
+HowOften=33
+WS=34
 'LOCATE'=1
 'FROM'=2
 'ID='=3
@@ -47,10 +49,12 @@ WS=32
 'WHERE'=15
 'AND'=16
 'REPORT'=17
-'EXPENSE='=18
+'EXPENSE'=18
 'TO VENDOR'=19
-'VENDOR RFP'=20
-'DEFINE'=21
-'GOAL'=22
-'URL='=23
-'BID'=24
+'ON'=20
+'CALL'=21
+'VENDOR RFP'=22
+'DEFINE'=23
+'GOAL'=24
+'URL='=25
+'BID'=26

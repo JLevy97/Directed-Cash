@@ -65,7 +65,6 @@ public class Consensus_Node { //possible leader nodes that interact with the led
 
             if (command == null){
                 System.out.println("incorrect query input");
-                return blockchain;
             }
 
             System.out.println(command.toStringTree(f));
@@ -78,7 +77,6 @@ public class Consensus_Node { //possible leader nodes that interact with the led
 
             }else{
                 System.out.println("transaction out of order");
-                return blockchain;
             }
 
             current_look++;

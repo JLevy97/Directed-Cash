@@ -1,1 +1,1 @@
-Donate,Define,Call,Bid,Expense,Rate,Locate,Ledger,Bubble
+donate,define,call,bid,expense,rate,locate,ledger,bubble
